@@ -21,7 +21,9 @@ public class Consu_Logue_usua {
      optener=new conectar();
      con=null;
  }
- public String estadoUsuario(String usuario, String contra){
+ public String estadoUsuario(String usuario, String contra, String car){
+     String id_car=optenerNivel(car);
+     System.err.println("nivel "+id_car+" usu" +usuario+ "cont "+contra);
      String estado="";
      try {
          con=optener.getConectar();
@@ -29,15 +31,50 @@ public class Consu_Logue_usua {
          Statement st=con.createStatement();
          ResultSet rs=st.executeQuery(sql);
          while(rs.next()){
-             estado=rs.getString("estado");
-             System.out.println("valor: "+estado);
+            if(rs.getString("cargoo").equals(id_car)){
+            estado=rs.getString("estado");
+            }
+            // System.out.println("cargo "+rs.getString("estadoo")+" nombre"+rs.getString("estado"));
              
          }
+         
          
      } catch (Exception e) {
          estado="unknow";
      }
      return estado;
- }   
+     
+ }
+ // consultar cargo...
+ public ResultSet consultaCargo(){
+     
+     ResultSet rs=null;
+            try {
+                con=optener.getConectar();
+                String sql="CALL nivelAcceso()";
+                Statement st=con.createStatement();
+                rs=st.executeQuery(sql);
+                
+            } catch (Exception e) {
+                
+            }
+            return rs;
+ }
+ //OBTENER EL ID DEL CARGO
+ public String optenerNivel(String valor){
+     String nivel="";
+     con=optener.getConectar();
+     try {
+         Statement st=con.createStatement();
+         ResultSet rs=st.executeQuery("CALL OptenerNivel('"+valor+"')");
+         while(rs.next()){
+             nivel=rs.getString("codigo");
+            
+         }
+         
+     } catch (Exception e) {
+     }
+     return nivel;
+ }
     
 }
