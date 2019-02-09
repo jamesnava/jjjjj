@@ -29,7 +29,9 @@ public class func_Logue {
         funcionLog=new Consu_Logue_usua();
     }
  public void Loguearse(String usuario, String contr,String nivel, JFrame ventana,int cont_log, JFrame vist_logue,JLabel etiqueta){
-    String valor= funcionLog.estadoUsuario(usuario,contr,nivel);
+   //encriptamos contraseña
+     
+     String valor= funcionLog.estadoUsuario(usuario,contr,nivel);
     //System.out.println(valor);
     if(valor.equals("activo")|| valor.equals("ACTIVO")){
          ventana.setVisible(true);
