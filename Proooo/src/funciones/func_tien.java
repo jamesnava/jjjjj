@@ -6,6 +6,8 @@
 package funciones;
 
 import consultas.Consu_tien;
+import java.sql.ResultSet;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +28,25 @@ public void InsertarSucursal(String codigo,String nombre,String direccion,String
     else{
        JOptionPane.showMessageDialog(null,"error al Registrar"); 
     }
+}
+
+public void ConsultaTienda(JComboBox combo){
+    
+    ResultSet rs=obj_consu_tien.RetornarNombreT();
+    combo.removeAllItems();
+    try {
+         while(rs.next()){
+        combo.addItem(rs.getString("nomb"));
+             //System.out.println(rs.getString("nomb"));
+        
+    }
+    }
+    catch (Exception e) {
+        System.out.println(e);
+    }
+   
+    
+    
 }
 
     

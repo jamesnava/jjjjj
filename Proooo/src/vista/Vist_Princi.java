@@ -5,6 +5,8 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author NAVARRO
@@ -14,8 +16,10 @@ public class Vist_Princi extends javax.swing.JFrame {
     /**
      * Creates new form ventanaPrincipal
      */
+    int contador=0;
     public Vist_Princi() {
         initComponents();
+        
     }
 
     /**
@@ -27,6 +31,7 @@ public class Vist_Princi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -46,6 +51,17 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
+        Escritorio.setLayout(EscritorioLayout);
+        EscritorioLayout.setHorizontalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 860, Short.MAX_VALUE)
+        );
+        EscritorioLayout.setVerticalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 541, Short.MAX_VALUE)
+        );
+
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
 
@@ -59,8 +75,18 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenu2.add(jMenu8);
 
         jMenu12.setText("Sede");
+        jMenu12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu12ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setText("Agregar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu12.add(jMenuItem1);
 
         jMenuItem2.setText("Actualizar Datos");
@@ -111,11 +137,11 @@ public class Vist_Princi extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 860, Short.MAX_VALUE)
+            .addComponent(Escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addComponent(Escritorio)
         );
 
         pack();
@@ -128,6 +154,30 @@ public class Vist_Princi extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+      
+        Inter_Agre_Sede obj_Inter_Agre_Sede=new Inter_Agre_Sede();
+       
+       obj_Inter_Agre_Sede.LLenarElCombo();
+        
+        Escritorio.add(obj_Inter_Agre_Sede);
+        obj_Inter_Agre_Sede.show();
+        obj_Inter_Agre_Sede.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Sede.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Sede.getHeight()/2);
+       
+        
+        
+        
+         
+        
+        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenu12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu12ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jMenu12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,6 +216,7 @@ public class Vist_Princi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
