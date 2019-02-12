@@ -2,6 +2,15 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
+    <Container class="javax.swing.JMenu" name="jMenu7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenu7"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="jMenu1">
@@ -84,10 +93,46 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
+        <Menu class="javax.swing.JMenu" name="jMenu9">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenu4"/>
+            <Property name="text" type="java.lang.String" value="Productos"/>
           </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="jMenu10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Producto"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Insertar"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Modificar"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenu11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Categoria de Producto"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Nueva"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Moficar"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu5">
           <Properties>
@@ -130,7 +175,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="Escritorio" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="Escritorio" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -140,12 +188,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="860" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1100" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="541" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="669" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

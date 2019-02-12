@@ -23,7 +23,7 @@ public class Consu_Logue_usua {
  }
  public String estadoUsuario(String usuario, String contra, String car){
      String id_car=optenerNivel(car);
-     System.err.println("nivel "+id_car+" usu" +usuario+ "cont "+contra);
+    
      String estado="";
      try {
          con=optener.getConectar();

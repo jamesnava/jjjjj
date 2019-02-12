@@ -31,6 +31,7 @@ public class Vist_Princi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu7 = new javax.swing.JMenu();
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -45,9 +46,17 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+
+        jMenu7.setText("jMenu7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,11 +64,11 @@ public class Vist_Princi extends javax.swing.JFrame {
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 860, Short.MAX_VALUE)
+            .addGap(0, 1100, Short.MAX_VALUE)
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 541, Short.MAX_VALUE)
+            .addGap(0, 669, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -122,8 +131,29 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setText("jMenu4");
-        jMenuBar1.add(jMenu4);
+        jMenu9.setText("Productos");
+
+        jMenu10.setText("Producto");
+
+        jMenuItem8.setText("Insertar");
+        jMenu10.add(jMenuItem8);
+
+        jMenuItem9.setText("Modificar");
+        jMenu10.add(jMenuItem9);
+
+        jMenu9.add(jMenu10);
+
+        jMenu11.setText("Categoria de Producto");
+
+        jMenuItem10.setText("Nueva");
+        jMenu11.add(jMenuItem10);
+
+        jMenuItem11.setText("Moficar");
+        jMenu11.add(jMenuItem11);
+
+        jMenu9.add(jMenu11);
+
+        jMenuBar1.add(jMenu9);
 
         jMenu5.setText("jMenu5");
         jMenuBar1.add(jMenu5);
@@ -141,7 +171,9 @@ public class Vist_Princi extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(Escritorio)
+                .addContainerGap())
         );
 
         pack();
@@ -218,20 +250,27 @@ public class Vist_Princi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }

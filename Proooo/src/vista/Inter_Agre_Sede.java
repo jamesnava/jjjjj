@@ -49,9 +49,9 @@ public class Inter_Agre_Sede extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         combo_tienda = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_grabar_sede = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btn_cancelar_sede = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("AGREGAR SEDE");
@@ -68,16 +68,16 @@ public class Inter_Agre_Sede extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Denominacion");
 
-        jButton1.setText("Grabar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_grabar_sede.setText("Grabar");
+        btn_grabar_sede.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_grabar_sedeActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Direccion");
 
-        jButton2.setText("Cancelar");
+        btn_cancelar_sede.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,9 +104,9 @@ public class Inter_Agre_Sede extends javax.swing.JInternalFrame {
                             .addComponent(txt_direccion_sede, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(91, 91, 91)
-                        .addComponent(jButton1)
+                        .addComponent(btn_grabar_sede)
                         .addGap(42, 42, 42)
-                        .addComponent(jButton2))
+                        .addComponent(btn_cancelar_sede))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -145,14 +145,14 @@ public class Inter_Agre_Sede extends javax.swing.JInternalFrame {
                     .addComponent(combo_tienda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)))
+                    .addComponent(btn_grabar_sede)
+                    .addComponent(btn_cancelar_sede)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_grabar_sedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_grabar_sedeActionPerformed
         // TODO add your handling code here:
         //recuperamos los datos...
         String codigo=txt_codigo_sede.getText();
@@ -175,13 +175,13 @@ public class Inter_Agre_Sede extends javax.swing.JInternalFrame {
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_grabar_sedeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cancelar_sede;
+    private javax.swing.JButton btn_grabar_sede;
     private javax.swing.JComboBox combo_tienda;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
