@@ -76,5 +76,21 @@ public class Consu_Logue_usua {
      }
      return nivel;
  }
+ //recuperar dni del usuario...
+ public String RecuperarDni(String usuario,String contra){
+     String dni="";
+     con=optener.getConectar();
+     try {
+         String Sql="CALL RecuperarDniUsuario('"+usuario+"','"+contra+"')";
+         Statement st=con.createStatement();
+         ResultSet rs=st.executeQuery(Sql);
+         while(rs.next()){
+             dni=rs.getString("dni");
+         }
+     } catch (Exception e) {
+     }
+     
+     return dni;
+ }
     
 }

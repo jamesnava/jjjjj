@@ -6,6 +6,7 @@
 package funciones;
 import consultas.Consu_ProdCate;
 import java.sql.ResultSet;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,7 +26,7 @@ public void insertarProducto(String codigo,String nombre,String descripcion,Stri
     rsMarca=obj_Consu_ProdCate.RetornaMarca(marca);
     try {
         while (rsMarca.next()) { 
-            idMarca=rsMarca.getInt("idMarca");
+            idMarca=rsMarca.getInt("codigoMarca");
             
         }
         while(rsCategoria.next()){
@@ -67,7 +68,7 @@ public void ActualizarProducto(String codigo,String nombre,String descripcion,St
 }
 //:::::::::::::::::::::::::CATEGORIA::::::::::::::::::::::::::::::::::::::
 public void InsertarCategoria(String codigoCate,String nombreCategoria,String descripcionCate){
-    String valor=obj_Consu_ProdCate.InsertarCategoria(nombreCategoria, codigoCate, descripcionCate);
+    String valor=obj_Consu_ProdCate.InsertarCategoria(codigoCate,nombreCategoria, descripcionCate);
     if(valor.equals("CORRECTO")){
         JOptionPane.showMessageDialog(null,"SE INSERTÓ CORRECTAMENTE");
     }
@@ -85,6 +86,20 @@ public void ActualizarCategoria(String codigoCate,String nombreCategoria,String 
         JOptionPane.showMessageDialog(null,"OCURRIÓ PROBLEMAS AL ALTUALIZAR");
     }
 }
+
+public void LlenadoAlComboCategoria(JComboBox combo){
+    combo.removeAllItems();
+    ResultSet rs;
+   rs=obj_Consu_ProdCate.ConsultaCategoria();
+    try {
+        while(rs.next()){
+            combo.addItem(rs.getString("categoria"));
+        }
+    } catch (Exception e) {
+    }
+    
+}
+
 
 //:::::::::::::::::::::::::FIN CATEGORIA::::::::::::::::::::::::::::::::::
 //:::::::::::::::::::::::::IGV::::::::::::::::::::::::::::::::::::::::::::
@@ -110,5 +125,29 @@ public void ActualizarIgv(String codigo_igv,int porcentaje,String descripcion,St
     
 }
 //:::::::::::::::::::::::::FIN IGV::::::::::::::::::::::::::::::::::::::::
+//:::::::::::::::::::::::::INICIO MARCA:::::::::::::::::::::::::::::::::::
+public void LlenadoAlComboMarca(JComboBox combo){
+    combo.removeAllItems();
+    ResultSet rs;
+   rs=obj_Consu_ProdCate.ConsultaMarca();
+    try {
+        while(rs.next()){
+            combo.addItem(rs.getString("marca"));
+        }
+    } catch (Exception e) {
+    }
+}
+//insertando marca
+public void InsertarMarca(String codigo,String nombre,String descripcion){
+    
+    String valor=obj_Consu_ProdCate.InsertarMarca(codigo, nombre, descripcion);
+    if(valor.equals("CORRECTO")){
+        JOptionPane.showMessageDialog(null,"SE INSERTÓ CORRECTAMENTE");
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"ERROR AL INSERTAR");
+    }
+}
+//:::::::::::::::::::::::::FIN MARCA::::::::::::::::::::::::::::::::::::::
     
 }

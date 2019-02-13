@@ -25,7 +25,7 @@ public class Consu_ProdCate {
  public String InsertarProducto(String codigo_barra,String nombre,String descripcion,String color,String tamaño,String codigo_categoria,String dni_usua,int codi_marca){
      String estado="INCORRECTO";
      try {
-         String sql="CALL XX('"+codigo_barra+"','"+nombre+"','"+descripcion+"','"+color+"','"+tamaño+"','"+codigo_categoria+"','"+dni_usua+"','"+codi_marca+"')";
+         String sql="CALL InsertarProducto('"+codigo_barra+"','"+nombre+"','"+descripcion+"','"+color+"','"+tamaño+"','"+codigo_categoria+"','"+dni_usua+"','"+codi_marca+"')";
          Statement st=con.createStatement();
          st.executeQuery(sql);
          estado="CORRECTO";
@@ -54,7 +54,7 @@ public class Consu_ProdCate {
   public String InsertarCategoria(String codigo_Categoria,String nombre,String descripcion){
      String estado="INCORRECTO";
      try {
-         String sql="CALL XX('"+codigo_Categoria+"','"+nombre+"','"+descripcion+"')";
+         String sql="CALL InsertarCategoria('"+codigo_Categoria+"','"+nombre+"','"+descripcion+"')";
          Statement st=con.createStatement();
          st.executeQuery(sql);
          estado="CORRECTO";
@@ -76,7 +76,17 @@ public class Consu_ProdCate {
      }
      return estado;
  }
- 
+   public ResultSet ConsultaCategoria(){
+       ResultSet rs=null;
+       try {
+           String sql="CALL ConsultaCategoria()";
+           Statement st=con.createStatement();
+           rs=st.executeQuery(sql);
+       } catch (Exception e) {
+       }
+       return rs;
+           
+   }
  //::::::::::::::::::::::::::Categoria::::::::::::::::::::::::::::::::
    
 //:::::::::::::::::::::::::::Igv::::::::::::::::::::::::::::::::::::::
@@ -106,10 +116,39 @@ public class Consu_ProdCate {
      return estado;
  }
 //:::::::::::::::::::::::::::IGV::::::::::::::::::::::::::::::::::::::
+ //::::::::::::::::::::::::::MARCA::::::::::::::::::::::::::::::::::::
+ public ResultSet ConsultaMarca(){
+     ResultSet rs=null;
+     try {
+         String sql="CALL ConsultaMarca()";
+         Statement st=con.createStatement();
+         rs=st.executeQuery(sql);
+     } catch (Exception e) {
+         
+     }
+     return rs;
+ }
+ public String InsertarMarca(String codigo,String nombre,String descripcion)
+         
+ {
+     String estado="INCORRECTO";
+     try {
+         String sql="CALL InsertarMarca('"+codigo+"','"+nombre+"','"+descripcion+"')";
+         Statement st=con.createStatement();
+         st.executeQuery(sql);
+         estado="CORRECTO";
+     } catch (Exception e) {
+         
+     }
+     return estado;
+ }
+         
+ 
+ //::::::::::::::::::::::::::FIN MARCA::::::::::::::::::::::::::::::::
  public ResultSet RetornaMarca(String nombre){
      ResultSet rs=null;
      try {
-         String sql="CALL XX('"+nombre+"')";
+         String sql="CALL RetornarIdMarca('"+nombre+"')";
          Statement st=con.createStatement();
          rs=st.executeQuery(sql);
      } catch (Exception e) {
@@ -119,7 +158,7 @@ public class Consu_ProdCate {
  public ResultSet RetornaCategoria(String categoria){
      ResultSet rs=null;
      try {
-         String sql="CALL xx('"+categoria+"')";
+         String sql="CALL RetornarIdCategoria('"+categoria+"')";
          Statement st=con.createStatement();
          rs=st.executeQuery(sql);
      } catch (Exception e) {

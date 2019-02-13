@@ -37,7 +37,6 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btn_grabar_producto" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <Component id="txt_codigo_producto" alignment="0" max="32767" attributes="0"/>
                   <Component id="txt_nombre_producto" alignment="0" max="32767" attributes="0"/>
@@ -46,8 +45,12 @@
                   <Component id="combo_categoria" alignment="0" max="32767" attributes="0"/>
                   <Component id="combo_marca" alignment="0" max="32767" attributes="0"/>
                   <Component id="txt_usuario_producto" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="btn_grabar_producto" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="118" max="32767" attributes="0"/>
+              <EmptySpace pref="121" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -172,6 +175,12 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txt_usuario_producto">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JComboBox" name="combo_categoria">
       <Properties>
@@ -201,6 +210,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="GRABAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_grabar_productoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

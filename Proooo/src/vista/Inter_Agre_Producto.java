@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package vista;
+import funciones.func_ProdCate;
 
 /**
  *
@@ -14,8 +15,15 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
     /**
      * Creates new form Inter_Agre_Producto
      */
+    func_ProdCate obj_func_ProdCate;
+    
     public Inter_Agre_Producto() {
         initComponents();
+        //llenando categoria
+        obj_func_ProdCate=new func_ProdCate();
+        obj_func_ProdCate.LlenadoAlComboCategoria(combo_categoria);
+        obj_func_ProdCate.LlenadoAlComboMarca(combo_marca);
+        
     }
 
     /**
@@ -81,11 +89,18 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
             }
         });
 
+        txt_usuario_producto.setEditable(false);
+
         combo_categoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         combo_marca.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btn_grabar_producto.setText("GRABAR");
+        btn_grabar_producto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_grabar_productoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,7 +119,6 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_grabar_producto)
                     .addComponent(jScrollPane1)
                     .addComponent(txt_codigo_producto)
                     .addComponent(txt_nombre_producto)
@@ -112,8 +126,11 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
                     .addComponent(txt_tamanio_producto)
                     .addComponent(combo_categoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(combo_marca, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_usuario_producto))
-                .addContainerGap(118, Short.MAX_VALUE))
+                    .addComponent(txt_usuario_producto)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btn_grabar_producto)))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,6 +183,24 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_tamanio_productoActionPerformed
 
+    private void btn_grabar_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_grabar_productoActionPerformed
+        // TODO add your handling code here:
+        //recuperamos datos de los campos de texto....
+        String codigo=txt_codigo_producto.getText();
+        String nombre=txt_nombre_producto.getText();
+        String color=txt_color_producto.getText();
+        String tamaño=txt_tamanio_producto.getText();
+        String descripcion=txt_descripcion_producto.getText();
+        String categoria=combo_categoria.getSelectedItem().toString();
+        String marca=combo_marca.getSelectedItem().toString();
+        String usuario=txt_usuario_producto.getText();
+        // getters y setters
+        //fin getters y setters
+       obj_func_ProdCate.insertarProducto(codigo, nombre, descripcion, color, tamaño,categoria, usuario, marca);
+        //System.out.println("fs "+marca+categoria );
+        
+    }//GEN-LAST:event_btn_grabar_productoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_grabar_producto;
@@ -185,6 +220,6 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txt_descripcion_producto;
     private javax.swing.JTextField txt_nombre_producto;
     private javax.swing.JTextField txt_tamanio_producto;
-    private javax.swing.JTextField txt_usuario_producto;
+    public javax.swing.JTextField txt_usuario_producto;
     // End of variables declaration//GEN-END:variables
 }

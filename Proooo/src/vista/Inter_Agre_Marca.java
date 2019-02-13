@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package vista;
+import funciones.func_ProdCate;
 
 /**
  *
@@ -13,9 +14,12 @@ public class Inter_Agre_Marca extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Inter_Agre_Marca
+     * 
      */
+    func_ProdCate obj_func_ProdCate;
     public Inter_Agre_Marca() {
         initComponents();
+        obj_func_ProdCate=new func_ProdCate();
     }
 
     /**
@@ -33,8 +37,8 @@ public class Inter_Agre_Marca extends javax.swing.JInternalFrame {
         txt_codigo_marca = new javax.swing.JTextField();
         txt_nombre_marca = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txt_descripcion_marca = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        area_descripcion_marca = new javax.swing.JTextArea();
+        btn_grabar_marca = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("AGREGAR MARCA");
@@ -45,11 +49,16 @@ public class Inter_Agre_Marca extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Descripcion");
 
-        txt_descripcion_marca.setColumns(20);
-        txt_descripcion_marca.setRows(5);
-        jScrollPane1.setViewportView(txt_descripcion_marca);
+        area_descripcion_marca.setColumns(20);
+        area_descripcion_marca.setRows(5);
+        jScrollPane1.setViewportView(area_descripcion_marca);
 
-        jButton1.setText("AGREGAR");
+        btn_grabar_marca.setText("AGREGAR");
+        btn_grabar_marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_grabar_marcaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -68,7 +77,7 @@ public class Inter_Agre_Marca extends javax.swing.JInternalFrame {
                     .addComponent(txt_codigo_marca)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(jButton1)))
+                        .addComponent(btn_grabar_marca)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -87,22 +96,38 @@ public class Inter_Agre_Marca extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btn_grabar_marca)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_grabar_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_grabar_marcaActionPerformed
+        // TODO add your handling code here:
+        String codigo=txt_codigo_marca.getText();
+        String nombre=txt_nombre_marca.getText();
+        String descripcion=area_descripcion_marca.getText();
+        //getters_setters
+        
+        //fin getters_setters
+        obj_func_ProdCate.InsertarMarca(codigo, nombre, descripcion);
+        //borrando...
+        txt_codigo_marca.setText("");
+        txt_nombre_marca.setText("");
+        area_descripcion_marca.setText("");
+        
+    }//GEN-LAST:event_btn_grabar_marcaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextArea area_descripcion_marca;
+    private javax.swing.JButton btn_grabar_marca;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txt_codigo_marca;
-    private javax.swing.JTextArea txt_descripcion_marca;
     private javax.swing.JTextField txt_nombre_marca;
     // End of variables declaration//GEN-END:variables
 }

@@ -56,6 +56,9 @@ public class func_Logue {
      }
      
  }
+ public String DevolverDni(String usuario,String contra){
+     return funcionLog.RecuperarDni(usuario, contra);
+ }
  
  public void cerrarLogueo(int n, JFrame obj){
      if(n==0){
@@ -63,6 +66,7 @@ public class func_Logue {
      }
      
  }
+ 
  public void borraCampos(JTextField campo1, JPasswordField campo2){
      campo1.setText("");
      campo2.setText("");

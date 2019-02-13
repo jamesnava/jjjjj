@@ -9,13 +9,16 @@ package vista;
  *
  * @author CESAR
  */
+import funciones.func_ProdCate;
 public class Inter_Agre_Categoria extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Inter_Agre_Categoria
      */
+    func_ProdCate obj_func_produCate;
     public Inter_Agre_Categoria() {
         initComponents();
+        
     }
 
     /**
@@ -34,12 +37,17 @@ public class Inter_Agre_Categoria extends javax.swing.JInternalFrame {
         txt_codigo_categoria = new javax.swing.JTextField();
         txt_nombre_categoria = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txt_descripcion_categoria = new javax.swing.JTextArea();
+        area_descripcion_categoria = new javax.swing.JTextArea();
 
         setClosable(true);
         setTitle("AGREGAR CATEGORIA");
 
         btn_agregar_categoria.setText("AGREGAR");
+        btn_agregar_categoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregar_categoriaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Codigo");
 
@@ -47,9 +55,9 @@ public class Inter_Agre_Categoria extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Descripcion");
 
-        txt_descripcion_categoria.setColumns(20);
-        txt_descripcion_categoria.setRows(5);
-        jScrollPane1.setViewportView(txt_descripcion_categoria);
+        area_descripcion_categoria.setColumns(20);
+        area_descripcion_categoria.setRows(5);
+        jScrollPane1.setViewportView(area_descripcion_categoria);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,15 +107,31 @@ public class Inter_Agre_Categoria extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_agregar_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregar_categoriaActionPerformed
+        // TODO add your handling code here:
+       obj_func_produCate=new func_ProdCate();
+       //recuperando datos-...
+       String codigo=txt_codigo_categoria.getText();
+       String nombre=txt_nombre_categoria.getText();
+       String descripcion=area_descripcion_categoria.getText();
+       //getters...
+       obj_func_produCate.InsertarCategoria(codigo, nombre, descripcion);
+       //getters..
+       //borrando...
+       txt_codigo_categoria.setText("");
+       txt_nombre_categoria.setText("");
+       area_descripcion_categoria.setText("");
+    }//GEN-LAST:event_btn_agregar_categoriaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea area_descripcion_categoria;
     private javax.swing.JButton btn_agregar_categoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txt_codigo_categoria;
-    private javax.swing.JTextArea txt_descripcion_categoria;
     private javax.swing.JTextField txt_nombre_categoria;
     // End of variables declaration//GEN-END:variables
 }

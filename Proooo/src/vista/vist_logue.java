@@ -57,14 +57,9 @@ public class vist_logue extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         label_contador = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu8 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenu3.setText("File");
         jMenuBar2.add(jMenu3);
@@ -110,7 +105,10 @@ public class vist_logue extends javax.swing.JFrame {
             }
         });
 
-        jMenu2.setText("Usuario");
+        jMenu1.setText("Ajustes");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Administrador");
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenu2MouseClicked(evt);
@@ -130,27 +128,7 @@ public class vist_logue extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem1);
 
-        jMenuItem2.setText("Registro Usuario Nuevo");
-        jMenu2.add(jMenuItem2);
-
         jMenuBar1.add(jMenu2);
-
-        jMenu1.setText("Ajustes");
-        jMenuBar1.add(jMenu1);
-
-        jMenu7.setText("Tienda");
-
-        jMenuItem3.setText("Agregar Sede");
-        jMenu7.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu7);
-
-        jMenu8.setText("Cargo");
-
-        jMenuItem4.setText("Nuevo Cargo");
-        jMenu8.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
 
@@ -190,7 +168,7 @@ public class vist_logue extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txt_usua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(pass_cont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,6 +204,10 @@ public class vist_logue extends javax.swing.JFrame {
         
         Vist_Princi vista_Principal=new Vist_Princi();
         obj_Logueo.Loguearse(obj_usuario.getUsuario(),obj_usuario.getContra(),codi_carg,vista_Principal,Contador_logueo,this,label_contador);
+        //enviar dni ala vista principal
+       String DNI= obj_Logueo.DevolverDni(Usuario,cont);
+        vista_Principal.dni_usuario.setText(DNI);
+            
         obj_Logueo.borraCampos(txt_usua, pass_cont);
        
         Contador_logueo--;
@@ -313,14 +295,9 @@ public class vist_logue extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JLabel label_contador;
     private javax.swing.JPasswordField pass_cont;
     private javax.swing.JTextField txt_usua;

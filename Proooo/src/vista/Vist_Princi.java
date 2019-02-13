@@ -33,6 +33,8 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenu7 = new javax.swing.JMenu();
         Escritorio = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
+        dni_usuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -53,6 +55,9 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenu11 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
 
@@ -68,8 +73,10 @@ public class Vist_Princi extends javax.swing.JFrame {
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 669, Short.MAX_VALUE)
+            .addGap(0, 656, Short.MAX_VALUE)
         );
+
+        jLabel1.setText("USUARIO:");
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -136,6 +143,11 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenu10.setText("Producto");
 
         jMenuItem8.setText("Insertar");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu10.add(jMenuItem8);
 
         jMenuItem9.setText("Modificar");
@@ -146,12 +158,32 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenu11.setText("Categoria de Producto");
 
         jMenuItem10.setText("Nueva");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu11.add(jMenuItem10);
 
         jMenuItem11.setText("Moficar");
         jMenu11.add(jMenuItem11);
 
         jMenu9.add(jMenu11);
+
+        jMenu4.setText("Marca");
+
+        jMenuItem12.setText("Insertar");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem12);
+
+        jMenuItem13.setText("Actualizar");
+        jMenu4.add(jMenuItem13);
+
+        jMenu9.add(jMenu4);
 
         jMenuBar1.add(jMenu9);
 
@@ -168,12 +200,21 @@ public class Vist_Princi extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Escritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(Escritorio)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -210,6 +251,32 @@ public class Vist_Princi extends javax.swing.JFrame {
         // TODO add your handling code here:
        
     }//GEN-LAST:event_jMenu12ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        Inter_Agre_Producto obj_Inter_Agre_Producto=new Inter_Agre_Producto();
+                            Escritorio.add(obj_Inter_Agre_Producto);
+                            obj_Inter_Agre_Producto.show();
+                            obj_Inter_Agre_Producto.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Producto.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Producto.getHeight()/2);
+                            obj_Inter_Agre_Producto.txt_usuario_producto.setText(dni_usuario.getText());
+                            
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+          Inter_Agre_Categoria obj_Inter_Agre_Categoria=new Inter_Agre_Categoria();
+                            Escritorio.add(obj_Inter_Agre_Categoria);
+                            obj_Inter_Agre_Categoria.show();
+                            obj_Inter_Agre_Categoria.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Categoria.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Categoria.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        Inter_Agre_Marca obj_Inter_Agre_Marca=new Inter_Agre_Marca();
+                        Escritorio.add(obj_Inter_Agre_Marca);
+                        obj_Inter_Agre_Marca.show();
+                        obj_Inter_Agre_Marca.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Marca.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Marca.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,12 +316,15 @@ public class Vist_Princi extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
+    public javax.swing.JLabel dni_usuario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
@@ -264,6 +334,8 @@ public class Vist_Princi extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
