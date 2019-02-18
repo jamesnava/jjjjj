@@ -68,6 +68,35 @@ public ResultSet RetornarNombreT(){
     }
     return nombre;
 }
+// Retorna el nombre del sucursal...
+public ResultSet RetornarNombreSede()
+{
+    con=optener.getConectar();
+    ResultSet rs=null;
+    String sql="CALL ConsultaSede()";
+    try {
+        Statement st=con.createStatement();
+        rs=st.executeQuery(sql);
+    } catch (Exception e) {
+        
+    }
+    return rs;
+}
+// Retornar codigo sucursal...
+public String RetornarCodigoSede(String nombre){
+    con=optener.getConectar();
+    String idSede="";
+    String sql="CALL RetornarIdSede('"+nombre+"')";
+    try {
+        Statement st=con.createStatement();
+        ResultSet rs=st.executeQuery(sql);
+        while(rs.next()){
+            idSede=rs.getString("codigoSede");
+        }
+    } catch (Exception e) {
+    }
+    return idSede;
+}
 
 
     

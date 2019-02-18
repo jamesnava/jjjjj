@@ -8,6 +8,8 @@ package funciones;
 import consultas.Consu_Duen;
 import java.math.BigInteger;
 import java.security.MessageDigest;
+import java.sql.ResultSet;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -55,6 +57,23 @@ public class func_Duen_Regis {
         
     }
     //::::::::::::::::::::::::::::::::::REGISTRO TIENDA::::::::::::::::::::::::::::::::::::::::::::::::
+    // cargo.......................
+    public void LlenarComboCargo(JComboBox combo){
+     ResultSet rs=obj_dueno.RetornarNombreCargo();
+    combo.removeAllItems();
+    try {
+         while(rs.next()){
+        combo.addItem(rs.getString("NombreCargo"));
+             //System.out.println(rs.getString("nomb"));
+        
+    }
+    }
+    catch (Exception e) {
+        System.out.println(e);
+    }
+    }
+    
+    //fin cargo....................
     public void BorrarCampos(JTextField campo1,JTextField campo2,JTextField campo3, JTextField campo4,JTextField campo5, JTextField campo6, JPasswordField contra1, JPasswordField contra2){
         campo1.setText("");
         campo2.setText("");

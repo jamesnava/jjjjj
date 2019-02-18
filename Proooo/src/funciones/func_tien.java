@@ -48,6 +48,23 @@ public void ConsultaTienda(JComboBox combo){
     
     
 }
+// sede......................
+public void LlenarComboSede(JComboBox combo){
+     ResultSet rs=obj_consu_tien.RetornarNombreSede();
+    combo.removeAllItems();
+    try {
+         while(rs.next()){
+        combo.addItem(rs.getString("sedes"));
+             //System.out.println(rs.getString("nomb"));
+        
+    }
+    }
+    catch (Exception e) {
+        System.out.println(e);
+    }
+}
+
+//fin sede...................
 
     
 }

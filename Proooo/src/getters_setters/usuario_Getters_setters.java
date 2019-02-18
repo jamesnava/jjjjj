@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package getters_setters;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class usuario_Getters_setters {
     String apellidoPaterno;
     String apellidoMaterno;
@@ -18,6 +11,8 @@ public class usuario_Getters_setters {
     String usuario;
     String contra;
     String estado;
+    String dni;
+    String correo;
 
     public usuario_Getters_setters() {
         this.apellidoPaterno ="";
@@ -27,7 +22,28 @@ public class usuario_Getters_setters {
         this.usuario = "";
         this.contra ="";
         this.estado="";
-        
+        this.dni="";
+        this.correo="";
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+    
+    
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getApellidoPaterno() {

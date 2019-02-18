@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package consultas;
 
 import funciones.conectar;
@@ -10,10 +6,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class Consu_ProdCate {
     Connection con;
     conectar optener;
@@ -45,6 +38,28 @@ public class Consu_ProdCate {
          
      }
      return estado;
+ }
+ 
+ public ResultSet ConsultaProducto(){
+     ResultSet rs=null;
+     try {
+         String sql="CALL ConsultaProducto()";
+         Statement st=con.createStatement();
+         rs=st.executeQuery(sql);
+     } catch (Exception e) {
+     }
+     return rs;
+ }
+ // consulta para la busqueda de la tabla...
+ public ResultSet ConsultaProductoLike(String nombre){
+     ResultSet rs=null;
+     try {
+         String sql="SELECT * FROM producto WHERE nomb_prod LIKE '%"+nombre+"%'";
+         Statement st=con.createStatement();
+         rs=st.executeQuery(sql);
+     } catch (Exception e) {
+     }
+     return rs;
  }
  
  

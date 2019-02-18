@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package consultas;
 
 import funciones.conectar;
@@ -11,10 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class Consu_Duen {
     Connection con;
     conectar optener;
@@ -61,6 +54,36 @@ public class Consu_Duen {
   }
   
   //::::::::::::::::::::::::::::::::::::::::::::::::REGISTRO TIENDA::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+//cargo..............
+  public ResultSet RetornarNombreCargo(){
+      ResultSet rs=null;
+      String sql="CALL ConsultaCargo()";
+      con=optener.getConectar();
+      try {
+          Statement st=con.createStatement();
+          rs=st.executeQuery(sql);
+      } catch (Exception e) {
+          
+      }
+      return rs;
+  }
+  // retornar codigo cargo...
+  public String RetornarCodigoCargo(String nombre){
+    con=optener.getConectar();
+    String idCargo="0";
+    String sql="CALL RetornarIdCargo('"+nombre+"')";
+    try {
+        Statement st=con.createStatement();
+        ResultSet rs=st.executeQuery(sql);
+        while(rs.next()){
+            idCargo=rs.getString("codigoCargo");
+        }
+    } catch (Exception e) {
+    }
+    return idCargo;
+}
+
   
+ //fin cargo.............
     
 }

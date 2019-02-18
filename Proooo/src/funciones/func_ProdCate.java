@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package funciones;
 import consultas.Consu_ProdCate;
 import java.sql.ResultSet;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class func_ProdCate {
     Consu_ProdCate obj_Consu_ProdCate;
 public func_ProdCate(){
@@ -66,6 +63,64 @@ public void ActualizarProducto(String codigo,String nombre,String descripcion,St
        JOptionPane.showMessageDialog(null,"OCURRIÓ PROBLEMAS AL ALTUALIZAR");
    }
 }
+
+public void LlenarTablaProducto(DefaultTableModel modelo){
+    Object valores[]=new Object[5];
+    ResultSet rs=obj_Consu_ProdCate.ConsultaProducto();
+    modelo.setRowCount(0);
+    try {
+        while(rs.next()){
+            valores[0]=rs.getString("codi_barr_prod");
+            valores[1]=rs.getString("nomb_prod");
+            valores[2]=rs.getString("desc_prod");
+            valores[3]=rs.getString("colo_prod");
+            valores[4]=rs.getString("tama_prod");
+            modelo.addRow(valores);
+
+        }
+    } catch (Exception e) {
+        
+    }
+    
+    
+}
+
+public void LlenarBusquedaTabla(DefaultTableModel modelo,String nombre){
+    Object valores[]=new Object[5];
+    ResultSet rs=obj_Consu_ProdCate.ConsultaProductoLike(nombre);
+    modelo.setRowCount(0);
+    try {
+        while(rs.next()){
+            valores[0]=rs.getString("codi_barr_prod");
+            valores[1]=rs.getString("nomb_prod");
+            valores[2]=rs.getString("desc_prod");
+            valores[3]=rs.getString("colo_prod");
+            valores[4]=rs.getString("tama_prod");
+            modelo.addRow(valores);
+
+        }
+    } catch (Exception e) {
+        
+    }
+}
+
+//LLENAR LOS CAMPOS PARA ACTUALIZAR...
+public void LlenarLosCamposParaActualizar(JTable tabla, JTextField codigo,JTextField nombre,JTextField color,JTextField tamanio,JTextArea textArea){
+    int Row=tabla.getSelectedRow();
+    int columna=tabla.getSelectedColumn();
+    
+        codigo.setText(String.valueOf(tabla.getValueAt(Row,0)));
+        nombre.setText(String.valueOf(tabla.getValueAt(Row,1)));
+        color.setText(String.valueOf(tabla.getValueAt(Row,3)));
+        tamanio.setText(String.valueOf(tabla.getValueAt(Row,4)));
+        textArea.setText(String.valueOf(tabla.getValueAt(Row,2)));
+       // usuario.setText(String.valueOf(tabla.getValueAt(Row,5)));
+       
+   
+}
+
+
+
 //:::::::::::::::::::::::::CATEGORIA::::::::::::::::::::::::::::::::::::::
 public void InsertarCategoria(String codigoCate,String nombreCategoria,String descripcionCate){
     String valor=obj_Consu_ProdCate.InsertarCategoria(codigoCate,nombreCategoria, descripcionCate);
