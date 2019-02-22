@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package funciones;
 
 import com.mysql.jdbc.Util;
@@ -17,21 +13,20 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class func_Logue {
     
     Consu_Logue_usua funcionLog;
+    Encriptardor encripta;
     public func_Logue() {
         
         funcionLog=new Consu_Logue_usua();
+        encripta=new Encriptardor();
     }
  public void Loguearse(String usuario, String contr,String nivel, JFrame ventana,int cont_log, JFrame vist_logue,JLabel etiqueta){
    //encriptamos contraseña
      
-     String valor= funcionLog.estadoUsuario(usuario,contr,nivel);
+     String valor= funcionLog.estadoUsuario(usuario,encripta.Encripta(contr),nivel);
     //System.out.println(valor);
     if(valor.equals("activo")|| valor.equals("ACTIVO")){
          ventana.setVisible(true);
@@ -57,7 +52,7 @@ public class func_Logue {
      
  }
  public String DevolverDni(String usuario,String contra){
-     return funcionLog.RecuperarDni(usuario, contra);
+     return funcionLog.RecuperarDni(usuario,encripta.Encripta(contra));
  }
  
  public void cerrarLogueo(int n, JFrame obj){

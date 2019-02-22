@@ -2,6 +2,7 @@
 package funciones;
 import consultas.Consu_ProdCate;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -31,6 +32,7 @@ public void insertarProducto(String codigo,String nombre,String descripcion,Stri
         }
     } catch (Exception e) {
     }
+    System.out.println("CODIGO CATE:"+codigo_categoria);
    String valor= obj_Consu_ProdCate.InsertarProducto(codigo, nombre, descripcion, color, tamaño, codigo_categoria, dni_usuario, idMarca);
    if(valor.equals("CORRECTO")){
        JOptionPane.showMessageDialog(null,"SE INSERTÓ CORRECTAMENTE");
@@ -204,5 +206,45 @@ public void InsertarMarca(String codigo,String nombre,String descripcion){
     }
 }
 //:::::::::::::::::::::::::FIN MARCA::::::::::::::::::::::::::::::::::::::
+//:::::::::::::::::::::::::INICIO PRECIO PRODUCTO:::::::::::::::::::::::::
+public void llenarComboProductoPrecio(JComboBox combo){
+    ResultSet rs=null;
+    combo.removeAllItems();
+   
+    try {
+        rs= obj_Consu_ProdCate.ConsultaProducto();
+        while(rs.next()){
+            combo.addItem(rs.getString("nomb_prod"));
+            
+        }
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+}
+public void InsertarPrecioProducto(String fecha,float precioVenta,float precioCompra,String producto,String estado){
+    String codigoProducto="";
+    ResultSet rs=obj_Consu_ProdCate.ConsultaIdProducto(producto);
+    int n=obj_Consu_ProdCate.RetornarIdUltimoPrecio()+1;
+    // opteniendo el id producto...
+    try {
+        while(rs.next()){
+            codigoProducto=rs.getString("IdProducto");
+        }
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+    
+    String valor=obj_Consu_ProdCate.InsertarPrecioProducto(n,fecha, precioVenta, precioCompra, codigoProducto, estado);
+    if(valor.equals("CORRECTO")){
+        JOptionPane.showMessageDialog(null,"SE INSERTÓ CORRECTAMENTE");
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"PROBLEMAS AL INSERTAR");
+        
+    }
+    
+}
+
+//:::::::::::::::::::::::::FIN PRECIO PRODUCTO::::::::::::::::::::::::::::
     
 }

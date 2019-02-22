@@ -4,6 +4,7 @@ package consultas;
 import funciones.conectar;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 
@@ -22,8 +23,8 @@ public class Consu_ProdCate {
          Statement st=con.createStatement();
          st.executeQuery(sql);
          estado="CORRECTO";
-     } catch (Exception e) {
-         
+     } catch (SQLException e) {
+         System.out.println(e);
      }
      return estado;
  }
@@ -58,6 +59,18 @@ public class Consu_ProdCate {
          Statement st=con.createStatement();
          rs=st.executeQuery(sql);
      } catch (Exception e) {
+     }
+     return rs;
+ }
+ 
+ public ResultSet ConsultaIdProducto(String nombre){
+     ResultSet rs=null;
+     try {
+         String sql="CALL RetornarIdProducto('"+nombre+"')";
+         Statement st=con.createStatement();
+         rs=st.executeQuery(sql);
+     } catch (SQLException e) {
+         System.out.println(e);
      }
      return rs;
  }
@@ -180,6 +193,35 @@ public class Consu_ProdCate {
          
      }
      return rs;
+ }
+ //precio del producto
+ public String InsertarPrecioProducto(int codigo,String fecha,float precioVenta,float PrecioCompra,String codigoProducto,String estado){
+     String valor="";
+     try {
+         String sql="CALL InsertarPrecioProducto('"+codigo+"','"+fecha+"','"+precioVenta+"','"+PrecioCompra+"','"+codigoProducto+"','"+estado+"')";
+         Statement st=con.createStatement();
+         st.executeQuery(sql);
+         valor="CORRECTO";
+     } catch (Exception e) {
+         valor="INCORRECTO";
+         System.out.println(e);
+     }
+     return valor;
+ }
+ 
+ public int RetornarIdUltimoPrecio(){
+     int n=0;
+     try {
+         String sql="CALL RetornarIdUltimoPrecio()";
+         Statement st=con.createStatement();
+         ResultSet rs=st.executeQuery(sql);
+         while(rs.next()){
+             n=rs.getInt("valor");
+         }
+     } catch (SQLException e) {
+         System.out.println(e);
+     }
+     return n;
  }
          
     

@@ -19,8 +19,8 @@ public class Vist_Princi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu7 = new javax.swing.JMenu();
         Escritorio = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         dni_usuario = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -39,6 +39,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem19 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
@@ -46,29 +47,74 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
-
-        jMenu7.setText("jMenu7");
+        jMenu13 = new javax.swing.JMenu();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenu16 = new javax.swing.JMenu();
+        jMenu17 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenu14 = new javax.swing.JMenu();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jLabel1.setText("USUARIO:");
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addContainerGap(1420, Short.MAX_VALUE)
+                .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(27, 27, 27)
+                        .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 656, Short.MAX_VALUE)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(522, Short.MAX_VALUE))
         );
+        Escritorio.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Escritorio.setLayer(dni_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabel1.setText("USUARIO:");
+        jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 255, 255), java.awt.Color.darkGray));
 
         jMenu1.setText("File");
+        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu1);
 
+        jMenu2.setBorder(null);
         jMenu2.setText("Tienda");
+        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu8.setText("Tienda");
 
@@ -108,6 +154,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Usuario");
+        jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem5.setText("Crear Usuario");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -131,6 +178,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu9.setText("Productos");
+        jMenu9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu10.setText("Producto");
 
@@ -141,6 +189,14 @@ public class Vist_Princi extends javax.swing.JFrame {
             }
         });
         jMenu10.add(jMenuItem8);
+
+        jMenuItem19.setText("Precio");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jMenuItem19);
 
         jMenu9.add(jMenu10);
 
@@ -176,11 +232,70 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu9);
 
-        jMenu5.setText("jMenu5");
+        jMenu5.setText("Proveedor");
+        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem9.setText("Nuevo");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem9);
+
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("jMenu6");
+        jMenu6.setText("Reporte");
+        jMenu6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu6);
+
+        jMenu13.setText("Ventas");
+        jMenu13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenuItem14.setText("Factura");
+        jMenu13.add(jMenuItem14);
+
+        jMenuItem15.setText("Boleta");
+        jMenu13.add(jMenuItem15);
+
+        jMenuBar1.add(jMenu13);
+
+        jMenu16.setText("Cliente");
+        jMenu16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu16);
+
+        jMenu17.setText("Impuesto");
+        jMenu17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu17);
+
+        jMenu7.setText("Gestion de Contraseña");
+        jMenu7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenuItem16.setText("Cambiar");
+        jMenu7.add(jMenuItem16);
+
+        jMenuBar1.add(jMenu7);
+
+        jMenu14.setText("Abastecimiento");
+        jMenu14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenuItem17.setText("Stock");
+        jMenu14.add(jMenuItem17);
+
+        jMenuItem18.setText("Abastecer");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
+        jMenu14.add(jMenuItem18);
+
+        jMenuBar1.add(jMenu14);
 
         setJMenuBar(jMenuBar1);
 
@@ -189,12 +304,6 @@ public class Vist_Princi extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1416, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addComponent(Escritorio)
                 .addContainerGap())
         );
@@ -202,10 +311,7 @@ public class Vist_Princi extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         pack();
@@ -279,6 +385,40 @@ public class Vist_Princi extends javax.swing.JFrame {
                         obj_Inter_Agre_Usua.btn_grabar.setVisible(false);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        Inter_Agre_Proveedor obj_Inter_Agre_Proveedor=new Inter_Agre_Proveedor();
+        Escritorio.add(obj_Inter_Agre_Proveedor);
+        obj_Inter_Agre_Proveedor.show();
+        obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Proveedor.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Proveedor.getHeight()/2);
+        
+    }//GEN-LAST:event_jMenu5ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+         Inter_Agre_Proveedor obj_Inter_Agre_Proveedor=new Inter_Agre_Proveedor();
+        Escritorio.add(obj_Inter_Agre_Proveedor);
+        obj_Inter_Agre_Proveedor.show();
+        obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Proveedor.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Proveedor.getHeight()/2);
+        obj_Inter_Agre_Proveedor.btn_actualizar.setVisible(false);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        Inter_Agre_Abastecimiento obj_Inter_Agre_Abastecimiento=new Inter_Agre_Abastecimiento();
+                                    Escritorio.add(obj_Inter_Agre_Abastecimiento);
+                                    obj_Inter_Agre_Abastecimiento.show();
+                                    obj_Inter_Agre_Abastecimiento.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Abastecimiento.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Abastecimiento.getHeight()/2);
+                                          
+        
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        Inter_Agre_PrecioProducto obj_Inter_Agre_PrecioProducto=new Inter_Agre_PrecioProducto();
+                                    Escritorio.add(obj_Inter_Agre_PrecioProducto);
+                                    obj_Inter_Agre_PrecioProducto.show();
+                                    obj_Inter_Agre_PrecioProducto.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_PrecioProducto.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_PrecioProducto.getHeight()/2);
+                      
+        
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -323,6 +463,10 @@ public class Vist_Princi extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
+    private javax.swing.JMenu jMenu14;
+    private javax.swing.JMenu jMenu16;
+    private javax.swing.JMenu jMenu17;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -337,6 +481,12 @@ public class Vist_Princi extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -344,5 +494,7 @@ public class Vist_Princi extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

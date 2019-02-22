@@ -24,14 +24,14 @@ public class func_Duen_Regis {
     public func_Duen_Regis(){
         obj_dueno=new Consu_Duen();
     }
-    public void registrarDueño(String dni,String nombre,String apellidoP,String apellidoM,String correo,String usuario, String contra,String contra1){
+    public void registrarDueño(String dni,String nombre,String apellidoP,String apellidoM,String correo,String usuario, String contra,String contra1,String telefono){
         
         if(contra.equals(contra1)){
             //ecriptamos la contraseña...
             Encriptardor obj_encriptador=new Encriptardor();
             String hastext=obj_encriptador.Encripta(contra);
             
-            obj_dueno.InsertarDueno(dni, nombre, apellidoP, apellidoM, correo, usuario, hastext);
+            obj_dueno.InsertarDueno(dni, nombre, apellidoP, apellidoM, correo, usuario, hastext,telefono);
         }
         else{
             JOptionPane.showMessageDialog(null,"LA CONTRASEÑA NO COINCIDE");

@@ -193,6 +193,7 @@ public class vist_logue extends javax.swing.JFrame {
         //enviar dni ala vista principal
        String DNI= obj_Logueo.DevolverDni(Usuario,cont);
         vista_Principal.dni_usuario.setText(DNI);
+            System.err.println("dni: "+DNI);
             
         obj_Logueo.borraCampos(txt_usua, pass_cont);
        

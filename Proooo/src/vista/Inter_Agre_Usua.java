@@ -271,10 +271,11 @@ public class Inter_Agre_Usua extends javax.swing.JInternalFrame {
         Vist_Princi objPrincipal=new Vist_Princi();
         //llamando a la funcion insertar...
         obj_func_usuario.InsertarUsuario(obj_usuarioGetSet.getDni(),obj_usuarioGetSet.getNombre(),
-                obj_usuarioGetSet.getApellidoPaterno(),obj_usuarioGetSet.getDireccion(), obj_usuarioGetSet.getTelefono(),
-                obj_usuarioGetSet.getCorreo(), obj_usuarioGetSet.getUsuario(), obj_usuarioGetSet.getContra(),sede, obj_usuarioGetSet.getApellidoMaterno(), estado, cargo);
+             obj_usuarioGetSet.getApellidoPaterno(),obj_usuarioGetSet.getDireccion(), obj_usuarioGetSet.getTelefono(),
+               obj_usuarioGetSet.getCorreo(), obj_usuarioGetSet.getUsuario(), obj_usuarioGetSet.getContra(),sede, obj_usuarioGetSet.getApellidoMaterno(), estado, cargo);
         
-         btn_grabar.setVisible(false);
+       /* obj_func_usuario.InsertarUsuario("47584657","jaime","navarro","av.peru","930554471","navarro@gmail.com","james","james","SEDE TALAVERA","Cruz","ACTIVO","VENDEDOR");
+         btn_grabar.setVisible(false);*/
         
         
         

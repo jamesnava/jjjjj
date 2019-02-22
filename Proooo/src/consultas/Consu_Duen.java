@@ -15,9 +15,9 @@ public class Consu_Duen {
         con=null;
         optener=new conectar();
     }
-  public void InsertarDueno(String dni,String nombre,String apellidoP,String apellidoM,String correo,String usuario,String contra){
+  public void InsertarDueno(String dni,String nombre,String apellidoP,String apellidoM,String correo,String usuario,String contra,String telefono){
       con=optener.getConectar();
-      String sql="CALL insertarDueno('"+dni+"','"+nombre+"','"+apellidoP+"','"+apellidoM+"','"+correo+"','"+usuario+"','"+contra+"')";
+      String sql="CALL insertarDueno('"+dni+"','"+nombre+"','"+apellidoP+"','"+apellidoM+"','"+correo+"','"+usuario+"','"+contra+"','"+telefono+"')";
       try {
           Statement st=con.createStatement();
           st.executeQuery(sql);
@@ -68,15 +68,15 @@ public class Consu_Duen {
       return rs;
   }
   // retornar codigo cargo...
-  public String RetornarCodigoCargo(String nombre){
+  public int RetornarCodigoCargo(String nombre){
     con=optener.getConectar();
-    String idCargo="0";
+    int idCargo=0;
     String sql="CALL RetornarIdCargo('"+nombre+"')";
     try {
         Statement st=con.createStatement();
         ResultSet rs=st.executeQuery(sql);
         while(rs.next()){
-            idCargo=rs.getString("codigoCargo");
+            idCargo=rs.getInt("codigoCargo");
         }
     } catch (Exception e) {
     }
