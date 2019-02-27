@@ -4,6 +4,7 @@ package consultas;
 import java.sql.Connection;
 import funciones.conectar;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 
@@ -40,5 +41,18 @@ public Consu_Proveedor()
      }
      return rs;
  }
+ public ResultSet ConsultaProveedorDni(String dni){
+     ResultSet rs=null;
+     String sql="CALL consultaProveedorPorDni('"+dni+"')";
+     try {
+         Statement st=con.createStatement();
+         
+         rs=st.executeQuery(sql);
+     } catch (SQLException e) {
+         System.out.println(e);
+     }
+     return rs;
+ }
+ 
     
 }

@@ -285,6 +285,11 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenu14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem17.setText("Stock");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
         jMenu14.add(jMenuItem17);
 
         jMenuItem18.setText("Abastecer");
@@ -419,6 +424,15 @@ public class Vist_Princi extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+   Inter_Stock obj_Inter_Stock=new Inter_Stock();
+                                    Escritorio.add(obj_Inter_Stock);
+                                    obj_Inter_Stock.show();
+                                    obj_Inter_Stock.setLocation(0,0);
+                                    obj_Inter_Stock.setSize(Escritorio.getWidth(), Escritorio.getHeight());
+        
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -456,7 +470,7 @@ public class Vist_Princi extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane Escritorio;
+    public javax.swing.JDesktopPane Escritorio;
     public javax.swing.JLabel dni_usuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;

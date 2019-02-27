@@ -47,7 +47,8 @@ public class Consu_ProdCate {
          String sql="CALL ConsultaProducto()";
          Statement st=con.createStatement();
          rs=st.executeQuery(sql);
-     } catch (Exception e) {
+     } catch (SQLException e) {
+         System.out.println(e);
      }
      return rs;
  }
@@ -58,7 +59,8 @@ public class Consu_ProdCate {
          String sql="SELECT * FROM producto WHERE nomb_prod LIKE '%"+nombre+"%'";
          Statement st=con.createStatement();
          rs=st.executeQuery(sql);
-     } catch (Exception e) {
+     } catch (SQLException e) {
+         System.out.println(e);
      }
      return rs;
  }
@@ -73,6 +75,23 @@ public class Consu_ProdCate {
          System.out.println(e);
      }
      return rs;
+ }
+ 
+ public String  ConsultaProductoPorcodigo(String codigo){
+    String valor="";
+    
+     try {
+         String sql="CALL ConsultaProductoPorCodigo('"+codigo+"')";
+         Statement st=con.createStatement();
+         ResultSet rs=st.executeQuery(sql);
+         while(rs.next()){
+             valor=rs.getString("nomb_prod");
+         }
+         
+     } catch (SQLException e) {
+         System.out.println(e);
+     }
+     return valor;
  }
  
  

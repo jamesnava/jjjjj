@@ -57,7 +57,7 @@ public void ActualizarProducto(String codigo,String nombre,String descripcion,St
         }
     } catch (Exception e) {
     }
-   String valor= obj_Consu_ProdCate.ActualizarProducto(codigo, nombre, descripcion, color, tamaño, codigo_categoria, dni_usuario, idMarca);
+   String valor= obj_Consu_ProdCate.ActualizarProducto(codigo, nombre, descripcion,color, tamaño, codigo_categoria, dni_usuario, idMarca);
    if(valor.equals("CORRECTO")){
        JOptionPane.showMessageDialog(null,"SE ACTUALIZÓ CORRECTAMENTE");
    }
@@ -101,8 +101,8 @@ public void LlenarBusquedaTabla(DefaultTableModel modelo,String nombre){
             modelo.addRow(valores);
 
         }
-    } catch (Exception e) {
-        
+    } catch (SQLException e) {
+        System.out.println(e);
     }
 }
 
