@@ -309,14 +309,14 @@ public class Vist_Princi extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Escritorio)
-                .addContainerGap())
+                .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -411,7 +411,7 @@ public class Vist_Princi extends javax.swing.JFrame {
                                     Escritorio.add(obj_Inter_Agre_Abastecimiento);
                                     obj_Inter_Agre_Abastecimiento.show();
                                     obj_Inter_Agre_Abastecimiento.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Abastecimiento.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Abastecimiento.getHeight()/2);
-                                          
+                                        obj_Inter_Agre_Abastecimiento.labelUsuario.setText(dni_usuario.getText());
         
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 

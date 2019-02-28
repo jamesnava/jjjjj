@@ -3,6 +3,8 @@ package funciones;
 
 import consultas.Consu_Proveedor;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -39,6 +41,58 @@ public class func_Prove {
         }
         
     }
+    //consulta de proveerdor por Ruc...
+    public boolean ComprobarProveedor(String ruc){
+        ResultSet rs=obj_Consu_Proveedor.ConsultaProveedorPorRuc(ruc);
+        boolean valor=false;
+        try {
+            if(rs.next()){
+                valor=true;
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return valor;
+    }
+    // consulta datos del proveedor..
+    public void DatosProveedorGuia(JLabel proveedorLabel,JLabel rucLabel,JLabel direccionLabel,String ruc){
+        ResultSet rs=obj_Consu_Proveedor.ConsultaProveedorPorRuc(ruc);
+        try {
+            while(rs.next()){
+                proveedorLabel.setText(rs.getString("razo_soci"));
+                rucLabel.setText(rs.getString("ruc_prov"));
+                direccionLabel.setText(rs.getString("dire_prov"));
+            }
+        } catch (Exception e) {
+        }
+    }
+    
+    //fin
+    //pasar los valores de la tabla enviar a la guia para imprimir
+    public void pasarDatosEntreTabla(JTable tablaEnviar,DefaultTableModel tablaGuia,JLabel labeltotal){
+        int filas,columnas;
+        float totalPagar=0;
+        float importe=0;
+        tablaGuia.removeRow(0);
+        filas=tablaEnviar.getRowCount();
+        columnas=tablaEnviar.getColumnCount();
+        for(int i=0;i<filas;i++){
+            Object[] valores=new Object[6];
+                 importe =Float.parseFloat(tablaEnviar.getValueAt(i,4).toString());
+                valores[0]=i+1;
+                valores[1]=tablaEnviar.getValueAt(i,1);
+                valores[2]=tablaEnviar.getValueAt(i, 2);
+                valores[3]=tablaEnviar.getValueAt(i,3);
+                valores[4]=importe;
+                valores[5]=tablaEnviar.getValueAt(i, 0);
+                totalPagar=totalPagar+importe;
+                
+         tablaGuia.addRow(valores);
+        }
+        labeltotal.setText(String.valueOf(importe));
+    }
+    //fin
     // pasar los valores de la tabla a los campos de texto..
     public void PasarValoresalCampo(JTextField ruc,JTextField razon,JTextField direccion,JTextField telefono,JTextField correo,JTable tabla){
         int row=tabla.getSelectedRow();

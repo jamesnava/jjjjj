@@ -41,9 +41,9 @@ public Consu_Proveedor()
      }
      return rs;
  }
- public ResultSet ConsultaProveedorDni(String dni){
+ public ResultSet ConsultaProveedorPorRuc(String ruc){
      ResultSet rs=null;
-     String sql="CALL consultaProveedorPorDni('"+dni+"')";
+     String sql="CALL ConsultaProveedorPorRuc('"+ruc+"')";
      try {
          Statement st=con.createStatement();
          
