@@ -15,12 +15,12 @@ import javax.swing.table.TableModel;
 public class func_Abast {
     private Consu_ProdCate obj_Consu_ProdCate;
     private Consu_Abast obj_Consu_Abast;
-    private Consu_tien obj_conConsu_tien;
+    private Consu_tien obj_Consu_tien;
     public func_Abast()
     {
         obj_Consu_ProdCate=new Consu_ProdCate();
         obj_Consu_Abast=new Consu_Abast();
-        obj_conConsu_tien=new Consu_tien();
+        obj_Consu_tien=new Consu_tien();
     }
     // public llenar a la base de datos abastecimiento...
     public void insertarAbastecimiento(int codigo,String fecha,float monto,String RucProveedor,String usuario){
@@ -31,26 +31,48 @@ public class func_Abast {
         else{
             JOptionPane.showMessageDialog(null,"error!!");
         }
+        
+       
     }
-    public void insertarDetalleAbastecimiento(JTable tabla,int codigoDetalle,int codigoAbast){
+    public void insertarDetalleAbastecimiento(JTable tabla,int codigoDetalle,int codigoAbast,String codigoSede){
         int row=tabla.getRowCount();
         int idDetalle=codigoDetalle;
         //insertar stock
         
         for(int i=0;i<row;i++){
+            
             int cantidadProducto=Integer.parseInt(tabla.getValueAt(i, 3).toString());
+            
             String producto=tabla.getValueAt(i,1).toString();
             float importe=Float.parseFloat(tabla.getValueAt(i,4).toString());
             idDetalle=idDetalle+1;
             
             String codigoProducto=tabla.getValueAt(i,5).toString();
+            //Stock
+            boolean consulta=obj_Consu_Abast.ConsultaInsertoAlmacen(codigoSede, codigoProducto);
+            System.err.println(consulta);
+            if(consulta){
+                int CantidadEnAlmacen=obj_Consu_Abast.RetornarStock(codigoSede, codigoProducto);
+                
+                obj_Consu_Abast.ActualizarStock(CantidadEnAlmacen+cantidadProducto, codigoSede, codigoProducto);
+            }
+            else{
+                int idStock=obj_Consu_Abast.RetornarIdMaximoStock();
+                obj_Consu_Abast.InsertarStock(idStock+1,cantidadProducto, codigoAbast, codigoSede, codigoProducto);
+                
+            }
+            
             obj_Consu_Abast.InsertarDetalleAbastecimiento(cantidadProducto,producto,importe, idDetalle,codigoAbast,codigoProducto);
         }
+        
+        
         
     }
     
     public int retornarIdMaximo(){
+        
        return obj_Consu_Abast.retornarIdMaximoAbastecimiento();
+       
     }
     // retornar id detallemaximo
       public int retornarIdMaximoDetalle(){
@@ -83,10 +105,21 @@ public class func_Abast {
         } catch (SQLException e) {
             System.out.println(e);
         }
+       
+        
     }
     
     //llenar combo sede en la ventana inter inter agre abastecimiento
     public void LlenarComboSede(JComboBox combo){
+        combo.removeAllItems();
+        ResultSet rs=obj_Consu_tien.RetornarNombreSede();
+        try {
+            while(rs.next()){
+                combo.addItem(rs.getString("sedes"));
+            }
+        } catch (Exception e) {
+            
+        }
         
         
     }
@@ -116,6 +149,9 @@ public class func_Abast {
         } catch (SQLException e) {
             System.out.println(e);
         }
+       
+      
+                
     }
     public void LlenarTablaEnviar(JTable tabla,DefaultTableModel modelo, int cantidad){
         // eliminar la fila...
@@ -139,7 +175,7 @@ public class func_Abast {
        
        // System.out.println(precio);
         modelo.addRow(valores);
-        tabla.setModel(modelo);
+        ///tabla.setModel(modelo);
         
         
     }
@@ -192,6 +228,7 @@ public class func_Abast {
         } catch (SQLException e) {
             System.out.println(e);   
         }
+        
         
         
     }

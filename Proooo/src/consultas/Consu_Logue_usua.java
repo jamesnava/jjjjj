@@ -14,13 +14,13 @@ public class Consu_Logue_usua {
      optener=new conectar();
      con=null;
  }
- public String estadoUsuario(String usuario, String contra, String car){
+ public String estadoUsuario(String usuario, String contra, String car,String codigoSede){
      String id_car=optenerNivel(car);
     
      String estado="";
      try {
          con=optener.getConectar();
-         String sql="CALL log_usuario('"+usuario+"','"+contra+"')";
+         String sql="CALL log_usuario('"+usuario+"','"+contra+"','"+codigoSede+"')";
          Statement st=con.createStatement();
          ResultSet rs=st.executeQuery(sql);
          while(rs.next()){
@@ -85,5 +85,6 @@ public class Consu_Logue_usua {
      
      return dni;
  }
-    
+ 
+ //comprobar Sede...
 }

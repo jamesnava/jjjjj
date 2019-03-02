@@ -3,6 +3,7 @@ package funciones;
 
 import com.mysql.jdbc.Util;
 import consultas.Consu_Logue_usua;
+import consultas.Consu_tien;
 import getters_setters.usuario_Getters_setters;
 import java.sql.ResultSet;
 import javax.swing.JComboBox;
@@ -18,17 +19,22 @@ public class func_Logue {
     
     Consu_Logue_usua funcionLog;
     Encriptardor encripta;
+    Consu_tien obj_Consu_tien;
     public func_Logue() {
-        
+        obj_Consu_tien=new Consu_tien();
         funcionLog=new Consu_Logue_usua();
         encripta=new Encriptardor();
     }
- public void Loguearse(String usuario, String contr,String nivel, JFrame ventana,int cont_log, JFrame vist_logue,JLabel etiqueta){
-   //encriptamos contraseña
+ public void Loguearse(String usuario, String contr,String nivel, JFrame ventana,int cont_log, JFrame vist_logue,JLabel etiqueta,String sede){
+  //optener codigoSede
+     String codigoSede=obj_Consu_tien.RetornarCodigoSede(sede);
      
-     String valor= funcionLog.estadoUsuario(usuario,encripta.Encripta(contr),nivel);
+     //encriptamos contraseña
+     
+     String valor= funcionLog.estadoUsuario(usuario,encripta.Encripta(contr),nivel,codigoSede);
     //System.out.println(valor);
     if(valor.equals("activo")|| valor.equals("ACTIVO")){
+        
          ventana.setVisible(true);
          vist_logue.dispose();
     }

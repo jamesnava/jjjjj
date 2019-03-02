@@ -54,6 +54,7 @@ public class Consu_Abast {
             st.executeQuery(sql);
             valor="CORRECTO";
         } catch (SQLException e) {
+            System.out.println(e);
             valor="INCORRECTO";
         }
         return valor;
@@ -68,7 +69,8 @@ public class Consu_Abast {
             while(rs.next()){
                 valor=rs.getInt("codigo");
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e);
         }
         return valor;
     }
@@ -126,7 +128,8 @@ public class Consu_Abast {
             while(rs.next()){
                 n=rs.getInt("codigo");
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e);
         }
         return n;
     }
@@ -145,12 +148,14 @@ public class Consu_Abast {
     }
     public String InsertarStock(int codigo,int cantidad,int codigoAbastecimiento,String codigoSede,String codigoProducto){
         String valor="";
+        System.err.println(codigoSede);
         String sql="CALL InsertarStockAlmacen('"+codigo+"','"+cantidad+"','"+codigoAbastecimiento+"','"+codigoSede+"','"+codigoProducto+"')";
         try {
             Statement st=con.createStatement();
             st.executeQuery(sql);
             valor="CORRECTO";
         } catch (SQLException e) {
+            System.out.println(e);
             valor="INCORRECTO";
         }
         return valor;
@@ -160,12 +165,45 @@ public class Consu_Abast {
       try {
           Statement st=con.createStatement();
           st.executeUpdate(sql);
-      } catch (Exception e) {
+      } catch (SQLException e) {
+          System.out.println(e);
       }
       
   }
-  //consulta se ya se registro un producto...
- /* public boolean ConsultaInsertoAlmacen(String codigoSede,String codigoProducto){
-      String 
-  }*/
+  
+  public int RetornarStock(String codigoSede,String codigoProducto){
+      int n=0;
+      String sql="CALL RetornarCantidadProducto('"+codigoProducto+"','"+codigoSede+"')";
+      try {
+          Statement st=con.createStatement();
+          ResultSet rs=st.executeQuery(sql);
+          while(rs.next()){
+              n=rs.getInt("cantidad");
+          }
+      } catch (SQLException e) {
+          System.out.println(e);
+      }
+      return n;
+  }
+          
+  //consulta se ya se registro un producto en el almacen...
+  public boolean ConsultaInsertoAlmacen(String codigoSede,String codigoProducto){
+      boolean estado=false;
+      int valor=0;
+      String slq="CALL ConsultaProductoAlmacen('"+codigoSede+"','"+codigoProducto+"')";
+      try {
+          Statement st=con.createStatement();
+          ResultSet rs=st.executeQuery(slq);
+          while(rs.next()){
+              valor=rs.getInt("valor");
+              System.out.println("cantidad "+valor);
+          }
+      } catch (SQLException e) {
+          System.out.println(e);
+      }
+      if(valor!=0){
+          estado=true;
+      }
+      return estado;
+  }
 }

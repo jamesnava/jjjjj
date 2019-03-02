@@ -34,7 +34,7 @@ public class conectar {
          Class.forName("com.mysql.jdbc.Driver");
          //asignamos conneccion...
          conecta=DriverManager.getConnection(url,usuario,contra);
-         System.out.println("coneccion exitosa");
+         
          
      } catch (Exception e) {
          System.out.println("no se establecio la conexion");

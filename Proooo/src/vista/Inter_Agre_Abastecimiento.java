@@ -20,7 +20,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         obj_func_Abast.LlenarTablaProductos(modelo);
         tabla_ProductosBuscar.setModel(modelo);
         // llenar el combo
-        obj_func_Abast.LlenarComboSede(comboSede);
+        //obj_func_Abast.LlenarComboSede(comboSede);
         // tabla
         modelo1=(DefaultTableModel)tablaEnviar.getModel();
         modelo1.setRowCount(0);
@@ -48,7 +48,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         labelUsuario = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        comboSede = new javax.swing.JComboBox();
+        Sede_Abast = new javax.swing.JLabel();
 
         setClosable(true);
 
@@ -133,8 +133,6 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
 
         jLabel5.setText("SEDE:");
 
-        comboSede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,8 +157,8 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
-                                .addGap(29, 29, 29)
-                                .addComponent(comboSede, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(Sede_Abast, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton3)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -194,13 +192,14 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txt_documentoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(comboSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Sede_Abast, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(txt_documentoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5)))
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_guia)
                     .addComponent(jButton3))
@@ -236,7 +235,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String valor=JOptionPane.showInputDialog("INGRESE LA CATIDAD DE PRODUCTO!");
         obj_func_Abast.LlenarTablaEnviar(tabla_ProductosBuscar, modelo1,Integer.parseInt(valor));
-        
+       tablaEnviar.setModel(modelo1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void boton_guiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_guiaActionPerformed
@@ -251,6 +250,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
          DefaultTableModel modeloGuia=(DefaultTableModel)obj_ComprobantePedido.tablaProductos.getModel();
          obj_func_Prove.pasarDatosEntreTabla(tablaEnviar,modeloGuia,obj_ComprobantePedido.label_totalPagar);
          obj_ComprobantePedido.labelDni.setText(labelUsuario.getText());
+         obj_ComprobantePedido.labelSede.setText(Sede_Abast.getText());
          //obj_ComprobantePedido.labelSede.setText(comboSede.getSelectedItem());
          obj_ComprobantePedido.tablaProductos.setModel(modeloGuia);
          
@@ -265,8 +265,8 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel Sede_Abast;
     private javax.swing.JButton boton_guia;
-    private javax.swing.JComboBox comboSede;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

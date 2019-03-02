@@ -1,6 +1,7 @@
 
 package vista;
 
+import funciones.func_Abast;
 import funciones.func_Logue;
 import funciones.func_Duen_Regis;
 import getters_setters.usuario_Getters_setters;
@@ -14,10 +15,13 @@ public class vist_logue extends javax.swing.JFrame {
     
     int Contador_logueo;
     func_Logue obj_log;
+    func_Abast obj_func_Abast;
     
     public vist_logue() {
         initComponents();
         obj_log=new func_Logue();
+        obj_func_Abast=new func_Abast();
+        obj_func_Abast.LlenarComboSede(JcomboSede);
         obj_log.llenarCargo(comboCargo);
         Contador_logueo=4;
         
@@ -42,6 +46,8 @@ public class vist_logue extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         label_contador = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        JcomboSede = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -62,9 +68,9 @@ public class vist_logue extends javax.swing.JFrame {
         setLocation(new java.awt.Point(450, 150));
         setUndecorated(true);
 
-        jLabel1.setText("Usuario:");
+        jLabel1.setText("Usuario              :");
 
-        jLabel2.setText("Contraseña:");
+        jLabel2.setText("Contraseña       :");
 
         jLabel3.setText("nivel de Acceso:");
 
@@ -90,6 +96,10 @@ public class vist_logue extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("Sede                   :");
+
+        JcomboSede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jMenu1.setText("Ajustes");
         jMenuBar1.add(jMenu1);
@@ -130,21 +140,23 @@ public class vist_logue extends javax.swing.JFrame {
                     .addComponent(label_contador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pass_cont)
                             .addComponent(txt_usua)
-                            .addComponent(comboCargo, 0, 147, Short.MAX_VALUE))
-                        .addGap(0, 123, Short.MAX_VALUE)))
+                            .addComponent(comboCargo, 0, 147, Short.MAX_VALUE)
+                            .addComponent(JcomboSede, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(145, 145, 145)
+                .addGap(167, 167, 167)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +166,7 @@ public class vist_logue extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txt_usua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(pass_cont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -162,7 +174,11 @@ public class vist_logue extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(77, 77, 77)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(JcomboSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addComponent(jButton1)
                 .addGap(42, 42, 42)
                 .addComponent(label_contador, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -182,6 +198,7 @@ public class vist_logue extends javax.swing.JFrame {
         String Usuario=txt_usua.getText();
         String cont=pass_cont.getText();
         String codi_carg=comboCargo.getSelectedItem().toString();
+        String codi_sede=JcomboSede.getSelectedItem().toString();
         //insertando valores
         usuario_Getters_setters obj_usuario=new usuario_Getters_setters();
         obj_usuario.setUsuario(Usuario);
@@ -189,11 +206,12 @@ public class vist_logue extends javax.swing.JFrame {
         // funcion logueo
         
         Vist_Princi vista_Principal=new Vist_Princi();
-        obj_Logueo.Loguearse(obj_usuario.getUsuario(),obj_usuario.getContra(),codi_carg,vista_Principal,Contador_logueo,this,label_contador);
+        obj_Logueo.Loguearse(obj_usuario.getUsuario(),obj_usuario.getContra(),codi_carg,vista_Principal,Contador_logueo,this,label_contador,codi_sede);
+       // vista_Principal.CampoSede.setText(codi_sede);
         //enviar dni ala vista principal
        String DNI= obj_Logueo.DevolverDni(Usuario,cont);
         vista_Principal.dni_usuario.setText(DNI);
-            System.err.println("dni: "+DNI);
+         vista_Principal.CampoSede.setText(codi_sede);
             
         obj_Logueo.borraCampos(txt_usua, pass_cont);
        
@@ -268,12 +286,14 @@ public class vist_logue extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox JcomboSede;
     private javax.swing.JComboBox comboCargo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

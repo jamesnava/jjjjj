@@ -11,8 +11,10 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 public class func_Prove {
     Consu_Proveedor obj_Consu_Proveedor;
+    float totalPagar;
     public func_Prove(){
         obj_Consu_Proveedor=new Consu_Proveedor();
+         totalPagar=0;
     }
     public void InsertarProveedor(String ruc,String razon,String direccion,String telefono,String correo){
         String valor=obj_Consu_Proveedor.InsertarProveedor(ruc, razon, direccion, telefono, correo);
@@ -72,7 +74,7 @@ public class func_Prove {
     //pasar los valores de la tabla enviar a la guia para imprimir
     public void pasarDatosEntreTabla(JTable tablaEnviar,DefaultTableModel tablaGuia,JLabel labeltotal){
         int filas,columnas;
-        float totalPagar=0;
+        
         float importe=0;
         tablaGuia.removeRow(0);
         filas=tablaEnviar.getRowCount();
@@ -88,9 +90,10 @@ public class func_Prove {
                 valores[5]=tablaEnviar.getValueAt(i, 0);
                 totalPagar=totalPagar+importe;
                 
+                
          tablaGuia.addRow(valores);
         }
-        labeltotal.setText(String.valueOf(importe));
+        labeltotal.setText(String.valueOf(totalPagar));
     }
     //fin
     // pasar los valores de la tabla a los campos de texto..

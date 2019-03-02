@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package funciones;
 
 import consultas.Consu_Duen;
@@ -14,10 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class func_Duen_Regis {
  
     Consu_Duen obj_dueno;

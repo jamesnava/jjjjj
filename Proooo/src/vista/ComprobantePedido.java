@@ -7,10 +7,12 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import funciones.func_Abast;
+import consultas.Consu_tien;
 
 public class ComprobantePedido extends javax.swing.JFrame {
     Calendar fecha;
      func_Abast obj_func_Abast;
+     Consu_tien obj_Consu_tien;
     public ComprobantePedido() {
        
         initComponents();
@@ -21,7 +23,7 @@ public class ComprobantePedido extends javax.swing.JFrame {
        String fechaCorrecta=anio+"-"+mes+"-"+dia;
        labelFech_Prove.setText(fechaCorrecta);
        obj_func_Abast=new func_Abast();
-       
+       obj_Consu_tien=new Consu_tien();
         
     }
 
@@ -258,7 +260,8 @@ public class ComprobantePedido extends javax.swing.JFrame {
                int codigo=obj_func_Abast.retornarIdMaximo();
                int codigoDetalle=obj_func_Abast.retornarIdMaximoDetalle();
                obj_func_Abast.insertarAbastecimiento(codigo+1,labelFech_Prove.getText(),Float.parseFloat(label_totalPagar.getText()),labelProve_Ruc.getText(),labelDni.getText());
-               obj_func_Abast.insertarDetalleAbastecimiento(tablaProductos, codigoDetalle, codigo);
+               String codigoSede=obj_Consu_tien.RetornarCodigoSede(labelSede.getText());
+               obj_func_Abast.insertarDetalleAbastecimiento(tablaProductos, codigoDetalle, codigo+1,codigoSede);
                // actualizamos stock
                
                
