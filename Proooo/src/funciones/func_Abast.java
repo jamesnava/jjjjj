@@ -4,9 +4,13 @@ import consultas.Consu_Abast;
 import consultas.Consu_ProdCate;
 import consultas.Consu_tien;
 import java.awt.Color;
+import java.awt.Image;
+import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -215,10 +219,10 @@ public class func_Abast {
                 valores[1]=nombre;
                 valores[2]=cantidad;
                 if(cantidad==0){
-                valores[3]="Agotada";
+                valores[3]="Agotada!!";
                 }
-                if(cantidad<10){
-                    valores[3]="Se Requiere Abasteciminto";
+                if(cantidad<10 && cantidad>0){
+                    valores[3]="Se Requiere Abastecimiento!";
                 }
                 
                 //ingresando valores al modelo
@@ -254,7 +258,25 @@ public class func_Abast {
     }
     public int RetornarIdMaximoStock(){
         return obj_Consu_Abast.RetornarIdMaximoStock();
-    }      
+    }
+    
+    // pintar el logo empresa....
+    public void PintarLogoGuia(JLabel label,String ruc){
+        func_imagen obj_image=new func_imagen();
+        Blob blob=null;
+        ResultSet rs=obj_Consu_tien.RetornarLogoTienda(ruc);
+        try {
+            while(rs.next()){
+                blob=rs.getBlob("logo");
+            }
+           
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+         Image img=obj_image.RetornarImagen(blob);
+         ImageIcon icon=new ImageIcon(img.getScaledInstance(200,94,Image.SCALE_SMOOTH));
+         label.setIcon(icon);
+    }
 
 
 }

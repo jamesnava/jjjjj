@@ -32,16 +32,19 @@
               <Component id="btn_close" min="-2" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" max="32767" attributes="0"/>
-                  <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jPanel1" pref="983" max="32767" attributes="0"/>
+                          <Component id="jPanel2" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="388" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -91,11 +94,11 @@
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="botonLogo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="txt_logoDueno" min="-2" pref="194" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -117,14 +120,10 @@
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txt_sitioweb" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botonLogo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txt_logoDueno" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace pref="10" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -159,27 +158,17 @@
             <Property name="text" type="java.lang.String" value="LOGO:"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel3">
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="136" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-        </Container>
-        <Component class="javax.swing.JButton" name="botonLogo">
+        <Component class="javax.swing.JTextField" name="txt_logoDueno">
           <Properties>
-            <Property name="text" type="java.lang.String" value="CARGAR LOGO"/>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cargar Logo"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonLogoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -252,6 +241,10 @@
                           </Group>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  <Component id="iconoLabel" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="message_contra" min="-2" pref="183" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -260,44 +253,50 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_dni" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txt_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_apellidoP" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_apellidoM" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txt_correo" max="32767" attributes="0"/>
-                      <Component id="jLabel6" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txt_usuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pass_contra" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="pass_contra1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="message_contra" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_dni" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txt_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_apellidoP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txt_apellidoM" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txt_correo" max="32767" attributes="0"/>
+                              <Component id="jLabel6" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txt_usuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="pass_contra" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="pass_contra1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="iconoLabel" alignment="1" min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -377,6 +376,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="pass_contra1">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pass_contra1ActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pass_contra1KeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="pass_contra1KeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -384,6 +388,10 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_telefono">
+        </Component>
+        <Component class="javax.swing.JLabel" name="message_contra">
+        </Component>
+        <Component class="javax.swing.JLabel" name="iconoLabel">
         </Component>
       </SubComponents>
     </Container>

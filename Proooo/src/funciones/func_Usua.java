@@ -2,6 +2,7 @@
 package funciones;
 import consultas.Consu_Usuario;
 import javax.swing.JOptionPane;
+import java.io.File;
 public class func_Usua {
     Consu_Usuario obj_Consu_Usua;
     Encriptardor encriptar;
@@ -10,10 +11,10 @@ public func_Usua(){
     encriptar=new Encriptardor();
     
 }
-public void InsertarUsuario(String dni,String nombre,String apellidoP,String direccion,String telefono,String correo,String usuario,String contrasenia,String sucursal,String apellidoM,String estado,String cargo){
+public void InsertarUsuario(String dni,String nombre,String apellidoP,String direccion,String telefono,String correo,String usuario,String contrasenia,String sucursal,String apellidoM,String estado,String cargo,File file){
     String contraseniaEncriptada=encriptar.Encripta(contrasenia);
     
-    String valor=obj_Consu_Usua.InsertarUsuario(dni, nombre, apellidoP, direccion, telefono, correo, usuario, contraseniaEncriptada, sucursal, apellidoM, estado, cargo);
+    String valor=obj_Consu_Usua.InsertarUsuario(dni, nombre, apellidoP, direccion, telefono, correo, usuario, contraseniaEncriptada, sucursal, apellidoM, estado, cargo,file);
     if(valor.equals("CORRECTO")){  
         JOptionPane.showMessageDialog(null,"Se Insertó Correctamente");
     }

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package funciones;
 
 import consultas.Consu_tien;
@@ -10,10 +6,7 @@ import java.sql.ResultSet;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author NAVARRO
- */
+
 public class func_tien {
     Consu_tien obj_consu_tien;
 public func_tien(){
@@ -48,6 +41,14 @@ public void ConsultaTienda(JComboBox combo){
     
     
 }
+
+//retornar ruc tienda...
+public String retornarRucTienda(String Sede){
+    
+    String codigoSede=obj_consu_tien.RetornarCodigoSede(Sede);
+    return obj_consu_tien.RetornarRucTienda(codigoSede);
+}
+
 // sede......................
 public void LlenarComboSede(JComboBox combo){
      ResultSet rs=obj_consu_tien.RetornarNombreSede();

@@ -6,6 +6,7 @@ import funciones.func_Abast;
 import funciones.func_Prove;
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import consultas.Consu_tien;
 
 public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
 
@@ -127,7 +128,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setVerifyInputWhenFocusTarget(false);
 
-        jLabel3.setText("DNI PROVEEDOR: ");
+        jLabel3.setText("RUC PROVEEDOR: ");
 
         jLabel4.setText("Usuario:");
 
@@ -255,6 +256,19 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
          obj_ComprobantePedido.tablaProductos.setModel(modeloGuia);
          
          //llenar tabla productos.....
+         //poner logo en la guia::::::::::::::::::::::::
+         //retornar id sede
+            Consu_tien obj_consu_tien=new Consu_tien();
+            String codigoSede=obj_consu_tien.RetornarCodigoSede(Sede_Abast.getText());
+            //fin retornar id sede
+          //retornar ruc...
+            String rucTienda=obj_consu_tien.RetornarRucTienda(codigoSede);
+            //fin...
+          //pintar...
+            obj_func_Abast.PintarLogoGuia(obj_ComprobantePedido.Label_logo_guia,rucTienda);
+         //poner logo en la guia::::::::::::::::::::::
+         
+                            dispose();
                             obj_ComprobantePedido.setVisible(true);
         }
         else{

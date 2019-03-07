@@ -33,7 +33,6 @@ public class ComprobantePedido extends javax.swing.JFrame {
     private void initComponents() {
 
         panelimprimir = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -49,24 +48,11 @@ public class ComprobantePedido extends javax.swing.JFrame {
         label_totalPagar = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         labelSede = new javax.swing.JLabel();
+        Label_logo_guia = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         labelDni = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jPanel2.setBackground(new java.awt.Color(255, 102, 102));
-        jPanel2.setForeground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 405, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -136,6 +122,8 @@ public class ComprobantePedido extends javax.swing.JFrame {
 
         labelSede.setText("jLabel6");
 
+        Label_logo_guia.setText("jLabel6");
+
         javax.swing.GroupLayout panelimprimirLayout = new javax.swing.GroupLayout(panelimprimir);
         panelimprimir.setLayout(panelimprimirLayout);
         panelimprimirLayout.setHorizontalGroup(
@@ -147,17 +135,8 @@ public class ComprobantePedido extends javax.swing.JFrame {
                     .addGroup(panelimprimirLayout.createSequentialGroup()
                         .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelimprimirLayout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelimprimirLayout.createSequentialGroup()
-                                .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelimprimirLayout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(49, 49, 49))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelimprimirLayout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)))
+                                .addComponent(jLabel3)
+                                .addGap(49, 49, 49)
                                 .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelimprimirLayout.createSequentialGroup()
                                         .addComponent(labelProvedor_razonSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,7 +154,13 @@ public class ComprobantePedido extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel5)
                                         .addGap(18, 18, 18)
-                                        .addComponent(labelSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                        .addComponent(labelSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelimprimirLayout.createSequentialGroup()
+                                .addComponent(Label_logo_guia, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelimprimirLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -187,8 +172,10 @@ public class ComprobantePedido extends javax.swing.JFrame {
             panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelimprimirLayout.createSequentialGroup()
                 .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelimprimirLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Label_logo_guia, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelimprimirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -312,6 +299,7 @@ public class ComprobantePedido extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel Label_logo_guia;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -319,7 +307,6 @@ public class ComprobantePedido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel labelDni;

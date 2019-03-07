@@ -14,7 +14,10 @@ public class func_Prove {
     float totalPagar;
     public func_Prove(){
         obj_Consu_Proveedor=new Consu_Proveedor();
-         totalPagar=0;
+         
+    }
+    public void ressetTotalPagar(){
+        totalPagar=0;
     }
     public void InsertarProveedor(String ruc,String razon,String direccion,String telefono,String correo){
         String valor=obj_Consu_Proveedor.InsertarProveedor(ruc, razon, direccion, telefono, correo);

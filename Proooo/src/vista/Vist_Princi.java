@@ -1,20 +1,20 @@
-
 package vista;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
-
 
 public class Vist_Princi extends javax.swing.JFrame {
 
-    
-    int contador=0;
+    int contador = 0;
+
     public Vist_Princi() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-        
+       
+
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -24,9 +24,9 @@ public class Vist_Princi extends javax.swing.JFrame {
         dni_usuario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         CampoSede = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        labelImagen = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        fileMenu = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -64,73 +64,70 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("USUARIO:");
 
+        dni_usuario.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("SEDE        :");
 
-        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
+        CampoSede.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        labelImagen.setText("jLabel3");
+        labelImagen.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EscritorioLayout.createSequentialGroup()
-                .addContainerGap(1037, Short.MAX_VALUE)
-                .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(EscritorioLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(dni_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(996, Short.MAX_VALUE)
+                .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(EscritorioLayout.createSequentialGroup()
                         .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CampoSede, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(EscritorioLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(CampoSede, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(35, 35, 35)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(252, 252, 252))
+                        .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6)
+                .addComponent(labelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(241, 241, 241))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EscritorioLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EscritorioLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
                         .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
-                            .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dni_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(CampoSede, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(EscritorioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(758, Short.MAX_VALUE))
+                        .addGroup(EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CampoSede, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(labelImagen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(695, Short.MAX_VALUE))
         );
         Escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Escritorio.setLayer(dni_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Escritorio.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Escritorio.setLayer(CampoSede, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Escritorio.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Escritorio.setLayer(labelImagen, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 255, 255), java.awt.Color.darkGray));
+        jMenuBar1.setMargin(new java.awt.Insets(0, 10, 0, 0));
 
-        jMenu1.setText("File");
-        jMenu1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        fileMenu.setBorder(null);
+        fileMenu.setText("Sesion");
+        fileMenu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuBar1.add(fileMenu);
 
         jMenu2.setBorder(null);
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tienda.png"))); // NOI18N
         jMenu2.setText("Tienda");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -171,10 +168,15 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/usuarioP.png"))); // NOI18N
         jMenu3.setText("Usuario");
         jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenuItem5.setBackground(new java.awt.Color(0, 0, 255));
+        jMenuItem5.setForeground(new java.awt.Color(0, 0, 0));
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agreUsuario.png"))); // NOI18N
         jMenuItem5.setText("Crear Usuario");
+        jMenuItem5.setMargin(new java.awt.Insets(2, 2, 5, 2));
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -195,6 +197,7 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
+        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Producto.png"))); // NOI18N
         jMenu9.setText("Productos");
         jMenu9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -250,6 +253,7 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu9);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ProveedorP.png"))); // NOI18N
         jMenu5.setText("Proveedor");
         jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenu5.addActionListener(new java.awt.event.ActionListener() {
@@ -258,6 +262,7 @@ public class Vist_Princi extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agregarProveedor.png"))); // NOI18N
         jMenuItem9.setText("Nuevo");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,10 +273,12 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reporte.png"))); // NOI18N
         jMenu6.setText("Reporte");
         jMenu6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu6);
 
+        jMenu13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ventas.png"))); // NOI18N
         jMenu13.setText("Ventas");
         jMenu13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -283,15 +290,17 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu13);
 
+        jMenu16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cliente.png"))); // NOI18N
         jMenu16.setText("Cliente");
         jMenu16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu16);
 
+        jMenu17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/impuesto.png"))); // NOI18N
         jMenu17.setText("Impuesto");
         jMenu17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu17);
 
-        jMenu7.setText("Gestion de Contraseña");
+        jMenu7.setText(" Contraseña");
         jMenu7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem16.setText("Cambiar");
@@ -299,6 +308,7 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu7);
 
+        jMenu14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abastecer.png"))); // NOI18N
         jMenu14.setText("Abastecimiento");
         jMenu14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -328,7 +338,7 @@ public class Vist_Princi extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(Escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,115 +351,109 @@ public class Vist_Princi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        
+
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       
-      
-        Inter_Agre_Sede obj_Inter_Agre_Sede=new Inter_Agre_Sede();
-       
-       obj_Inter_Agre_Sede.LLenarElCombo();
-        
+
+        Inter_Agre_Sede obj_Inter_Agre_Sede = new Inter_Agre_Sede();
+
+        obj_Inter_Agre_Sede.LLenarElCombo();
+
         Escritorio.add(obj_Inter_Agre_Sede);
         obj_Inter_Agre_Sede.show();
-        obj_Inter_Agre_Sede.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Sede.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Sede.getHeight()/2);
-       
-        
-        
-        
-         
-        
-        
+        obj_Inter_Agre_Sede.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Sede.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Sede.getHeight() / 2);
+
+
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenu12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu12ActionPerformed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_jMenu12ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        Inter_Agre_Producto obj_Inter_Agre_Producto=new Inter_Agre_Producto();
-                            Escritorio.add(obj_Inter_Agre_Producto);
-                            obj_Inter_Agre_Producto.show();
-                            obj_Inter_Agre_Producto.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Producto.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Producto.getHeight()/2);
-                            obj_Inter_Agre_Producto.txt_usuario_producto.setText(dni_usuario.getText());
-                            
-                            
+        Inter_Agre_Producto obj_Inter_Agre_Producto = new Inter_Agre_Producto();
+        Escritorio.add(obj_Inter_Agre_Producto);
+        obj_Inter_Agre_Producto.show();
+        obj_Inter_Agre_Producto.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Producto.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Producto.getHeight() / 2);
+        obj_Inter_Agre_Producto.txt_usuario_producto.setText(dni_usuario.getText());
+
+
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-          Inter_Agre_Categoria obj_Inter_Agre_Categoria=new Inter_Agre_Categoria();
-                            Escritorio.add(obj_Inter_Agre_Categoria);
-                            obj_Inter_Agre_Categoria.show();
-                            obj_Inter_Agre_Categoria.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Categoria.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Categoria.getHeight()/2);
+        Inter_Agre_Categoria obj_Inter_Agre_Categoria = new Inter_Agre_Categoria();
+        Escritorio.add(obj_Inter_Agre_Categoria);
+        obj_Inter_Agre_Categoria.show();
+        obj_Inter_Agre_Categoria.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Categoria.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Categoria.getHeight() / 2);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
         // TODO add your handling code here:
-        Inter_Agre_Marca obj_Inter_Agre_Marca=new Inter_Agre_Marca();
-                        Escritorio.add(obj_Inter_Agre_Marca);
-                        obj_Inter_Agre_Marca.show();
-                        obj_Inter_Agre_Marca.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Marca.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Marca.getHeight()/2);
+        Inter_Agre_Marca obj_Inter_Agre_Marca = new Inter_Agre_Marca();
+        Escritorio.add(obj_Inter_Agre_Marca);
+        obj_Inter_Agre_Marca.show();
+        obj_Inter_Agre_Marca.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Marca.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Marca.getHeight() / 2);
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-         Inter_Agre_Usua obj_Inter_Agre_Usua=new Inter_Agre_Usua();
-                        Escritorio.add(obj_Inter_Agre_Usua);
-                        obj_Inter_Agre_Usua.show();
-                        obj_Inter_Agre_Usua.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Usua.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Usua.getHeight()/2);
-                        obj_Inter_Agre_Usua.btn_grabar.setVisible(false);
+        Inter_Agre_Usua obj_Inter_Agre_Usua = new Inter_Agre_Usua();
+        Escritorio.add(obj_Inter_Agre_Usua);
+        obj_Inter_Agre_Usua.show();
+        obj_Inter_Agre_Usua.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Usua.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Usua.getHeight() / 2);
+        obj_Inter_Agre_Usua.btn_grabar.setVisible(false);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
-        Inter_Agre_Proveedor obj_Inter_Agre_Proveedor=new Inter_Agre_Proveedor();
+        Inter_Agre_Proveedor obj_Inter_Agre_Proveedor = new Inter_Agre_Proveedor();
         Escritorio.add(obj_Inter_Agre_Proveedor);
         obj_Inter_Agre_Proveedor.show();
-        obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Proveedor.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Proveedor.getHeight()/2);
-        
+        obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Proveedor.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Proveedor.getHeight() / 2);
+
     }//GEN-LAST:event_jMenu5ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-         Inter_Agre_Proveedor obj_Inter_Agre_Proveedor=new Inter_Agre_Proveedor();
+        Inter_Agre_Proveedor obj_Inter_Agre_Proveedor = new Inter_Agre_Proveedor();
         Escritorio.add(obj_Inter_Agre_Proveedor);
         obj_Inter_Agre_Proveedor.show();
-        obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Proveedor.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Proveedor.getHeight()/2);
+        obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Proveedor.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Proveedor.getHeight() / 2);
         obj_Inter_Agre_Proveedor.btn_actualizar.setVisible(false);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
-        Inter_Agre_Abastecimiento obj_Inter_Agre_Abastecimiento=new Inter_Agre_Abastecimiento();
-                                    Escritorio.add(obj_Inter_Agre_Abastecimiento);
-                                    obj_Inter_Agre_Abastecimiento.show();
-                                    obj_Inter_Agre_Abastecimiento.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_Abastecimiento.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_Abastecimiento.getHeight()/2);
-                                        obj_Inter_Agre_Abastecimiento.labelUsuario.setText(dni_usuario.getText());
-                                        obj_Inter_Agre_Abastecimiento.Sede_Abast.setText(CampoSede.getText());
-        
+        Inter_Agre_Abastecimiento obj_Inter_Agre_Abastecimiento = new Inter_Agre_Abastecimiento();
+        Escritorio.add(obj_Inter_Agre_Abastecimiento);
+        obj_Inter_Agre_Abastecimiento.show();
+        obj_Inter_Agre_Abastecimiento.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Abastecimiento.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Abastecimiento.getHeight() / 2);
+        obj_Inter_Agre_Abastecimiento.labelUsuario.setText(dni_usuario.getText());
+        obj_Inter_Agre_Abastecimiento.Sede_Abast.setText(CampoSede.getText());
+
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
-        Inter_Agre_PrecioProducto obj_Inter_Agre_PrecioProducto=new Inter_Agre_PrecioProducto();
-                                    Escritorio.add(obj_Inter_Agre_PrecioProducto);
-                                    obj_Inter_Agre_PrecioProducto.show();
-                                    obj_Inter_Agre_PrecioProducto.setLocation(Escritorio.getWidth()/2-obj_Inter_Agre_PrecioProducto.getWidth()/2,Escritorio.getHeight()/2-obj_Inter_Agre_PrecioProducto.getHeight()/2);
-                      
-        
+        Inter_Agre_PrecioProducto obj_Inter_Agre_PrecioProducto = new Inter_Agre_PrecioProducto();
+        Escritorio.add(obj_Inter_Agre_PrecioProducto);
+        obj_Inter_Agre_PrecioProducto.show();
+        obj_Inter_Agre_PrecioProducto.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_PrecioProducto.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_PrecioProducto.getHeight() / 2);
+
+
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
-   Inter_Stock obj_Inter_Stock=new Inter_Stock();
-                                    Escritorio.add(obj_Inter_Stock);
-                                    obj_Inter_Stock.show();
-                                    obj_Inter_Stock.setLocation(0,0);
-                                    obj_Inter_Stock.setSize(Escritorio.getWidth()/2, Escritorio.getHeight());
-        
+        Inter_Stock obj_Inter_Stock = new Inter_Stock();
+        Escritorio.add(obj_Inter_Stock);
+        obj_Inter_Stock.show();
+        obj_Inter_Stock.setLocation(0, 0);
+        obj_Inter_Stock.setSize(Escritorio.getWidth() / 2, Escritorio.getHeight());
+
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     /**
@@ -492,9 +496,9 @@ public class Vist_Princi extends javax.swing.JFrame {
     public javax.swing.JLabel CampoSede;
     public javax.swing.JDesktopPane Escritorio;
     public javax.swing.JLabel dni_usuario;
+    private javax.swing.JMenu fileMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
@@ -530,6 +534,6 @@ public class Vist_Princi extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel labelImagen;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,23 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package funciones;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author NAVARRO
- */
 public class conectar {
-    String bd;
-    String usuario;
-    String contra;
-    String url="";
-    Connection conecta;
+   private String bd;
+   private String usuario;
+   private String contra;
+   private String url="";
+   private Connection conecta;
     public conectar(){
        bd="sistemagenerico";
      usuario="root";
@@ -27,7 +19,7 @@ public class conectar {
      //ejecutamos...
      ejecutarConectar();
  }
- public void ejecutarConectar(){
+ private void ejecutarConectar(){
     
      try {
           //obtenemos el Driver
@@ -46,6 +38,15 @@ public class conectar {
  public Connection getConectar(){
      return conecta;
  }
+ public void CerrarConnection()
+ {
+     try {
+         conecta.close();
+     } catch (SQLException e) {
+         System.out.println("no Existe la conexcion");
+     }
+     
+ } 
     
             
 }

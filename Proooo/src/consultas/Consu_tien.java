@@ -4,6 +4,7 @@ package consultas;
 import java.sql.Connection;
 import funciones.conectar;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
@@ -89,6 +90,34 @@ public String RetornarCodigoSede(String nombre){
     } catch (Exception e) {
     }
     return idSede;
+}
+public String RetornarRucTienda(String codigoSede){
+    con=optener.getConectar();
+    String ruc="";
+    String sql="CALL RetornarRucTienda('"+codigoSede+"')";
+    try {
+        Statement st=con.createStatement();
+        ResultSet rs=st.executeQuery(sql);
+        while(rs.next()){
+            ruc=rs.getString("ruc");
+        }
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+    return ruc;
+}
+public ResultSet RetornarLogoTienda(String ruc){
+    con=optener.getConectar();
+    ResultSet rs=null;
+    String sql="CALL RetornarLogoTienda('"+ruc+"')";
+    try {
+        Statement st=con.createStatement();
+        rs=st.executeQuery(sql);
+        
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+    return rs;
 }
 
 

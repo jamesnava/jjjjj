@@ -32,9 +32,11 @@ public class Consu_Logue_usua {
          }
          
          
+         
      } catch (Exception e) {
          estado="unknow";
      }
+    
      return estado;
      
  }
@@ -65,8 +67,10 @@ public class Consu_Logue_usua {
             
          }
          
+         
      } catch (Exception e) {
      }
+     
      return nivel;
  }
  //recuperar dni del usuario...
@@ -80,6 +84,7 @@ public class Consu_Logue_usua {
          while(rs.next()){
              dni=rs.getString("dni");
          }
+         
      } catch (Exception e) {
      }
      

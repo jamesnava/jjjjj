@@ -3,9 +3,13 @@ package funciones;
 
 import com.mysql.jdbc.Util;
 import consultas.Consu_Logue_usua;
+import consultas.Consu_Usuario;
 import consultas.Consu_tien;
 import getters_setters.usuario_Getters_setters;
+import java.awt.Image;
+import java.sql.Blob;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -71,6 +75,15 @@ public class func_Logue {
  public void borraCampos(JTextField campo1, JPasswordField campo2){
      campo1.setText("");
      campo2.setText("");
+     
+ }
+ public void imagenUsuario(String dni,JLabel label){
+     Consu_Usuario obj =new Consu_Usuario();
+     func_imagen obj_image=new func_imagen();
+     Blob blob=obj.RetornarByteImagen(dni);
+     ImageIcon icono=new ImageIcon(obj_image.RetornarImagen(blob).getScaledInstance(150, 150,Image.SCALE_SMOOTH));
+     
+    label.setIcon(icono);
      
  }
     

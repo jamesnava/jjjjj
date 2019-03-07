@@ -22,11 +22,14 @@ super.getTableCellRendererComponent(table, value, Selected, hasFocus, row, col);
 
     if (Integer.parseInt(table.getValueAt(row,2).toString())==0) {
 
-         setBackground(Color.GREEN);
+         setBackground(Color.RED);
 
     } 
-    if(Integer.parseInt(table.getValueAt(row,2).toString())<=10){
+    if(Integer.parseInt(table.getValueAt(row,2).toString())<=10 && Integer.parseInt(table.getValueAt(row,2).toString())>0 ){
         setBackground(Color.ORANGE);
+    }
+    if(Integer.parseInt(table.getValueAt(row,2).toString())>10){
+        setBackground(Color.WHITE);
     }
         
 

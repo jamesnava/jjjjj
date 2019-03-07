@@ -2,6 +2,7 @@
 package funciones;
 
 import consultas.Consu_Duen;
+import java.io.File;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.sql.ResultSet;
@@ -34,7 +35,7 @@ public class func_Duen_Regis {
     public String RegistroNoRegistro(){
         int valor=obj_dueno.ConsultaDueno();
         String Registro="";
-        if(valor==1){
+        if(valor>=1){
             Registro="REGISTRO";
         }
         else{
@@ -45,8 +46,8 @@ public class func_Duen_Regis {
             
     
     //:::::::::::::::::::::::::::::::::::REGISTRO TIENDA:::::::::::::::::::::::::::::::::::::::::::::::
-    public void registroTienda(String ruc, String nombreT, String sitioWeb){
-        obj_dueno.insertarTienda(ruc, nombreT, sitioWeb);
+    public void registroTienda(String ruc, String nombreT, String sitioWeb,File file){
+        obj_dueno.insertarTienda(ruc, nombreT, sitioWeb,file);
         
     }
     //::::::::::::::::::::::::::::::::::REGISTRO TIENDA::::::::::::::::::::::::::::::::::::::::::::::::
