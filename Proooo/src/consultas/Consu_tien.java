@@ -71,8 +71,21 @@ public ResultSet RetornarNombreSede()
     try {
         Statement st=con.createStatement();
         rs=st.executeQuery(sql);
-    } catch (Exception e) {
-        
+    } catch (SQLException e) {
+        System.out.println(e);
+    }
+    return rs;
+}
+
+public ResultSet RetornarSede(String nombre){
+    con=optener.getConectar();
+    ResultSet rs=null;
+    String sql="CALL RetornarSede('"+nombre+"')";
+    try {
+        Statement st=con.createStatement();
+        rs=st.executeQuery(sql);
+    } catch (SQLException e) {
+        System.out.println(e);
     }
     return rs;
 }

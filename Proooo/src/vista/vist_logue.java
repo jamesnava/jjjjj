@@ -48,6 +48,7 @@ public class vist_logue extends javax.swing.JFrame {
         label_contador = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         JcomboSede = new javax.swing.JComboBox();
+        checkLogin = new javax.swing.JCheckBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -101,6 +102,13 @@ public class vist_logue extends javax.swing.JFrame {
 
         JcomboSede.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        checkLogin.setText("Administrador Principal");
+        checkLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkLoginActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("Ajustes");
         jMenuBar1.add(jMenu1);
 
@@ -139,24 +147,26 @@ public class vist_logue extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_contador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pass_cont)
-                            .addComponent(txt_usua)
-                            .addComponent(comboCargo, 0, 147, Short.MAX_VALUE)
-                            .addComponent(JcomboSede, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 123, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(comboCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JcomboSede, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txt_usua)
+                                    .addComponent(pass_cont)
+                                    .addComponent(checkLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 121, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,17 +180,20 @@ public class vist_logue extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(pass_cont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(comboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(JcomboSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(checkLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JcomboSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(65, 65, 65)
+                .addGap(47, 47, 47)
                 .addComponent(label_contador, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -193,30 +206,35 @@ public class vist_logue extends javax.swing.JFrame {
         func_Duen_Regis obj_func_Duen_Regis;
         obj_func_Duen_Regis=new func_Duen_Regis();
         func_Logue obj_Logueo=new func_Logue();
-        if(obj_func_Duen_Regis.RegistroNoRegistro().equals("REGISTRO")){
-       // TODO add your handling code here:
+        //recuperando campos
+        
         String Usuario=txt_usua.getText();
         String cont=pass_cont.getText();
-        String codi_carg=comboCargo.getSelectedItem().toString();
-        String codi_sede=JcomboSede.getSelectedItem().toString();
-        //insertando valores
-        usuario_Getters_setters obj_usuario=new usuario_Getters_setters();
-        obj_usuario.setUsuario(Usuario);
-        obj_usuario.setContra(cont);
-        // funcion logueo
-        
         Vist_Princi vista_Principal=new Vist_Princi();
-        obj_Logueo.Loguearse(obj_usuario.getUsuario(),obj_usuario.getContra(),codi_carg,vista_Principal,Contador_logueo,this,label_contador,codi_sede);
-       // vista_Principal.CampoSede.setText(codi_sede);
-        //enviar dni ala vista principal
-       String DNI= obj_Logueo.DevolverDni(Usuario,cont);
-       
-        vista_Principal.dni_usuario.setText(DNI);
-         vista_Principal.CampoSede.setText(codi_sede);
-         //poner imagen
-         obj_log.imagenUsuario(DNI,vista_Principal.labelImagen);
+        if(!checkLogin.isSelected()){
+        if(obj_func_Duen_Regis.RegistroNoRegistro().equals("REGISTRO")){
+            // TODO add your handling code here:
+        
+            String codi_carg=comboCargo.getSelectedItem().toString();
+            String codi_sede=JcomboSede.getSelectedItem().toString();
+            //insertando valores
+            usuario_Getters_setters obj_usuario=new usuario_Getters_setters();
+                obj_usuario.setUsuario(Usuario);
+                obj_usuario.setContra(cont);
+            // funcion logueo
+        
             
-        obj_Logueo.borraCampos(txt_usua, pass_cont);
+             obj_Logueo.Loguearse(obj_usuario.getUsuario(),obj_usuario.getContra(),codi_carg,vista_Principal,Contador_logueo,this,label_contador,codi_sede);
+            // vista_Principal.CampoSede.setText(codi_sede);
+            //enviar dni ala vista principal
+            String DNI= obj_Logueo.DevolverDni(Usuario,cont);
+       
+             vista_Principal.dni_usuario.setText(DNI);
+             vista_Principal.CampoSede.setText(codi_sede);
+         //poner imagen
+             obj_log.imagenUsuario(DNI,vista_Principal.labelImagen);
+            
+            obj_Logueo.borraCampos(txt_usua, pass_cont);
        
         Contador_logueo--;
         }
@@ -225,7 +243,10 @@ public class vist_logue extends javax.swing.JFrame {
             obj_Logueo.borraCampos(txt_usua, pass_cont);
         }
         
-        
+        }
+        else{
+          obj_Logueo.FunctionLoguearDueno(vista_Principal, Usuario,cont);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -254,6 +275,17 @@ public class vist_logue extends javax.swing.JFrame {
                         obj_vist_Regis_Due.setVisible(true);
                         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void checkLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkLoginActionPerformed
+      if(checkLogin.isSelected())
+      {
+          comboCargo.setEnabled(false);
+          
+      }
+      else{
+          comboCargo.setEnabled(true);
+      }
+    }//GEN-LAST:event_checkLoginActionPerformed
 
     
     public static void main(String args[]) {
@@ -290,6 +322,7 @@ public class vist_logue extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox JcomboSede;
+    private javax.swing.JCheckBox checkLogin;
     private javax.swing.JComboBox comboCargo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

@@ -84,7 +84,7 @@ public class func_Abast {
     }
     
     //llenar a la base de datos abastecimiento fin
-    public void LlenarTablaProductos(DefaultTableModel modelo){
+   public void LlenarTablaProductos(DefaultTableModel modelo){
         modelo.setRowCount(0);
         Object[] valores=new Object[4];
         ResultSet rs=obj_Consu_ProdCate.ConsultaProducto();
@@ -196,9 +196,12 @@ public class func_Abast {
         return valorRetornar;
     }
     //::::::::::::::::::::::::::::::::::::::Stock:::::::::::::::::::::::::::::::::
-    public void Stock(DefaultTableModel modelo){
+   public void Stock(DefaultTableModel modelo,String Sede){
+       String codigoSede=obj_Consu_tien.RetornarCodigoSede(Sede);
+       System.out.println("codigoSede: "+codigoSede);
+       System.out.println("sede: "+Sede);
         modelo.removeRow(0);
-        ResultSet rs=obj_Consu_Abast.consultaStockPorAlmacen();
+        ResultSet rs=obj_Consu_Abast.consultaStockPorAlmacen(codigoSede);
         Object valores[]=new Object[4];
        
         try {
@@ -274,8 +277,30 @@ public class func_Abast {
             System.out.println(e);
         }
          Image img=obj_image.RetornarImagen(blob);
-         ImageIcon icon=new ImageIcon(img.getScaledInstance(200,94,Image.SCALE_SMOOTH));
+         ImageIcon icon=new ImageIcon(img.getScaledInstance(250,100,Image.SCALE_SMOOTH));
          label.setIcon(icon);
+    }
+    
+    public String RetornarRucTienda(String NombreSede)
+    {
+        String ruc="";
+        ruc=obj_Consu_tien.RetornarRucTienda(obj_Consu_tien.RetornarCodigoSede(NombreSede));
+        return ruc;
+        
+    }
+    public void InsertarDatosEmpresa(JLabel telefono,JLabel correo,String nombre){
+        ResultSet rs=obj_Consu_tien.RetornarSede(nombre);
+        try {
+            String tele="",corre="";
+            while(rs.next()){
+                tele=rs.getString("tele_sucu");
+                corre=rs.getString("corr_sucu");
+            }
+            telefono.setText(tele);
+            correo.setText(corre);
+        } catch (Exception e) {
+            
+        }
     }
 
 

@@ -83,8 +83,21 @@ public class func_Logue {
      Blob blob=obj.RetornarByteImagen(dni);
      ImageIcon icono=new ImageIcon(obj_image.RetornarImagen(blob).getScaledInstance(150, 150,Image.SCALE_SMOOTH));
      
-    label.setIcon(icono);
+        label.setIcon(icono);
      
+ }
+ public void FunctionLoguearDueno(JFrame ventana,String usuario,String contra){
+    
+    
+    String contraseniaEcriptada=encripta.Encripta(contra);
+    String valor=funcionLog.LoguearDueno(usuario, contraseniaEcriptada);
+    if(valor.equals("CORRECTO")){
+        ventana.setVisible(true);
+    }
+    else{
+        JOptionPane.showMessageDialog(null,"Datos Incorrectos!!");
+    }
+    
  }
     
 }

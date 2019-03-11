@@ -41,7 +41,7 @@ public class Consu_ProdCate {
      return estado;
  }
  
- public ResultSet ConsultaProducto(){
+public ResultSet ConsultaProducto(){
      ResultSet rs=null;
      try {
          String sql="CALL ConsultaProducto()";
@@ -241,6 +241,27 @@ public class Consu_ProdCate {
          System.out.println(e);
      }
      return n;
+ }
+ public boolean ConsultaIdCategoria(String codigo){
+     boolean valor=false;
+     String sql="CALL ConsultaIdCategoria('"+codigo+"')";
+     try {
+         Statement st=con.createStatement();
+         ResultSet rs=st.executeQuery(sql);
+         int comprobar=0;
+         while(rs.next()){
+            comprobar=rs.getInt("cantidad");
+         }
+         if(comprobar!=0){
+             valor=true;
+         }
+         else{
+             valor=false;
+         }
+     } catch (SQLException e) {
+         System.out.println(e);
+     }
+     return valor;
  }
          
     

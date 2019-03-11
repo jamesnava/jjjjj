@@ -88,8 +88,8 @@ public class Consu_Abast {
         return rs;
     }
     //::::::::::::::::::::::consulta almacen stock:::::::::::::::::::::::
-    public ResultSet consultaStockPorAlmacen(){
-        String sql="CALL ConsultaStockPorAlmacen()";
+    public ResultSet consultaStockPorAlmacen(String codigoSede){
+        String sql="CALL ConsultaStockPorAlmacen('"+codigoSede+"')";
        ResultSet rs=null;
         try {
             Statement st=con.createStatement();

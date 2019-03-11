@@ -4,6 +4,7 @@ package consultas;
 import funciones.conectar;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 
@@ -91,5 +92,20 @@ public class Consu_Logue_usua {
      return dni;
  }
  
- //comprobar Sede...
+ //COMPROBAR DUEÑO_Logue...
+ public String LoguearDueno(String usuario,String contrasenia){
+     String valor="";
+     con=optener.getConectar();
+     try {
+         String sql="CALL LoguearDueno('"+usuario+"','"+contrasenia+"')";
+         Statement st=con.createStatement();
+         ResultSet rs=st.executeQuery(sql);
+         if(rs.next()){
+             valor="CORRECTO";
+         }
+     } catch (SQLException e) {
+         System.out.println(e);
+     }
+     return valor;
+ }
 }

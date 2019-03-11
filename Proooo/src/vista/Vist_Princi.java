@@ -1,19 +1,41 @@
 package vista;
 
-import java.awt.Color;
+import javafx.scene.paint.Color;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.plaf.basic.BasicMenuBarUI;
+import javax.swing.plaf.metal.MetalBorders;
 
 public class Vist_Princi extends javax.swing.JFrame {
 
     int contador = 0;
+  
 
     public Vist_Princi() {
         initComponents();
+        
         this.setExtendedState(MAXIMIZED_BOTH);
-       
-
+        
+        //MenuTienda.setBorder(BorderFactory.createLineBorder(Color.RED,10));
+        
+        MenuDeuda.setBorder(BorderFactory.createCompoundBorder(MenuDeuda.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuSesion.setBorder(BorderFactory.createCompoundBorder(MenuSesion.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuTienda.setBorder(BorderFactory.createCompoundBorder(MenuTienda.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuUsuario.setBorder(BorderFactory.createCompoundBorder(MenuUsuario.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuProducto.setBorder(BorderFactory.createCompoundBorder(MenuProducto.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuProveedor.setBorder(BorderFactory.createCompoundBorder(MenuProveedor.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuReporte.setBorder(BorderFactory.createCompoundBorder(MenuReporte.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuVentas.setBorder(BorderFactory.createCompoundBorder(MenuVentas.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuCliente.setBorder(BorderFactory.createCompoundBorder(MenuCliente.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuImpuesto.setBorder(BorderFactory.createCompoundBorder(MenuImpuesto.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuContrasenia.setBorder(BorderFactory.createCompoundBorder(MenuContrasenia.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        MenuAbastecimiento.setBorder(BorderFactory.createCompoundBorder(MenuAbastecimiento.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        ////MenuBar.setBackground(background);
+        UIManager.put("MenuBarUI.background",Color.GREEN );
+        
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -25,44 +47,55 @@ public class Vist_Princi extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         CampoSede = new javax.swing.JLabel();
         labelImagen = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        MenuBar = new javax.swing.JMenuBar();
+        MenuSesion = new javax.swing.JMenu();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        MenuTienda = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu12 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        MenuUsuario = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
+        MenuProducto = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        MenuProveedor = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu13 = new javax.swing.JMenu();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        MenuReporte = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu15 = new javax.swing.JMenu();
+        jMenu18 = new javax.swing.JMenu();
+        jMenuItem21 = new javax.swing.JMenuItem();
+        MenuVentas = new javax.swing.JMenu();
+        MenuFactura = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
-        jMenu16 = new javax.swing.JMenu();
-        jMenu17 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        jMenuItem20 = new javax.swing.JMenuItem();
+        MenuCliente = new javax.swing.JMenu();
+        jMenuItem23 = new javax.swing.JMenuItem();
+        MenuImpuesto = new javax.swing.JMenu();
+        jMenuItem22 = new javax.swing.JMenuItem();
+        MenuContrasenia = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
-        jMenu14 = new javax.swing.JMenu();
+        MenuAbastecimiento = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
+        MenuDeuda = new javax.swing.JMenu();
+        jMenuItem24 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Panel PRINCIPAL");
+        setAlwaysOnTop(true);
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("USUARIO:");
@@ -110,7 +143,7 @@ public class Vist_Princi extends javax.swing.JFrame {
                             .addComponent(CampoSede, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(labelImagen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(695, Short.MAX_VALUE))
+                .addContainerGap(699, Short.MAX_VALUE))
         );
         Escritorio.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Escritorio.setLayer(dni_usuario, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -118,25 +151,36 @@ public class Vist_Princi extends javax.swing.JFrame {
         Escritorio.setLayer(CampoSede, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Escritorio.setLayer(labelImagen, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jMenuBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 255, 255), java.awt.Color.darkGray));
-        jMenuBar1.setMargin(new java.awt.Insets(0, 10, 0, 0));
+        MenuBar.setBackground(new java.awt.Color(153, 153, 255));
+        MenuBar.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+        MenuBar.setAlignmentX(1.0F);
+        MenuBar.setBorderPainted(false);
+        MenuBar.setMargin(new java.awt.Insets(0, 10, 0, 0));
 
-        fileMenu.setBorder(null);
-        fileMenu.setText("Sesion");
-        fileMenu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar1.add(fileMenu);
+        MenuSesion.setBackground(new java.awt.Color(153, 153, 255));
+        MenuSesion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuSesion.setText("Sesion");
+        MenuSesion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jMenu2.setBorder(null);
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tienda.png"))); // NOI18N
-        jMenu2.setText("Tienda");
-        jMenu2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuItem11.setText("Salir");
+        MenuSesion.add(jMenuItem11);
+
+        jMenuItem13.setText("Cerrar Sesion");
+        MenuSesion.add(jMenuItem13);
+
+        MenuBar.add(MenuSesion);
+
+        MenuTienda.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuTienda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tienda.png"))); // NOI18N
+        MenuTienda.setText("Tienda");
+        MenuTienda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu8.setText("Tienda");
 
         jMenuItem4.setText("Actualizar Datos");
         jMenu8.add(jMenuItem4);
 
-        jMenu2.add(jMenu8);
+        MenuTienda.add(jMenu8);
 
         jMenu12.setText("Sede");
         jMenu12.addActionListener(new java.awt.event.ActionListener() {
@@ -164,13 +208,14 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenuItem3.setText("Dar de Baja");
         jMenu12.add(jMenuItem3);
 
-        jMenu2.add(jMenu12);
+        MenuTienda.add(jMenu12);
 
-        jMenuBar1.add(jMenu2);
+        MenuBar.add(MenuTienda);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/usuarioP.png"))); // NOI18N
-        jMenu3.setText("Usuario");
-        jMenu3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        MenuUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/usuarioP.png"))); // NOI18N
+        MenuUsuario.setText("Usuario");
+        MenuUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem5.setBackground(new java.awt.Color(0, 0, 255));
         jMenuItem5.setForeground(new java.awt.Color(0, 0, 0));
@@ -182,24 +227,17 @@ public class Vist_Princi extends javax.swing.JFrame {
                 jMenuItem5ActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem5);
-
-        jMenuItem6.setText("Modificar Datos");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem6);
+        MenuUsuario.add(jMenuItem5);
 
         jMenuItem7.setText("Dar de Baja");
-        jMenu3.add(jMenuItem7);
+        MenuUsuario.add(jMenuItem7);
 
-        jMenuBar1.add(jMenu3);
+        MenuBar.add(MenuUsuario);
 
-        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Producto.png"))); // NOI18N
-        jMenu9.setText("Productos");
-        jMenu9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        MenuProducto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Producto.png"))); // NOI18N
+        MenuProducto.setText("Productos");
+        MenuProducto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenu10.setText("Producto");
 
@@ -219,7 +257,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         });
         jMenu10.add(jMenuItem19);
 
-        jMenu9.add(jMenu10);
+        MenuProducto.add(jMenu10);
 
         jMenu11.setText("Categoria de Producto");
 
@@ -231,10 +269,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         });
         jMenu11.add(jMenuItem10);
 
-        jMenuItem11.setText("Moficar");
-        jMenu11.add(jMenuItem11);
-
-        jMenu9.add(jMenu11);
+        MenuProducto.add(jMenu11);
 
         jMenu4.setText("Marca");
 
@@ -246,19 +281,17 @@ public class Vist_Princi extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem12);
 
-        jMenuItem13.setText("Actualizar");
-        jMenu4.add(jMenuItem13);
+        MenuProducto.add(jMenu4);
 
-        jMenu9.add(jMenu4);
+        MenuBar.add(MenuProducto);
 
-        jMenuBar1.add(jMenu9);
-
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ProveedorP.png"))); // NOI18N
-        jMenu5.setText("Proveedor");
-        jMenu5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+        MenuProveedor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ProveedorP.png"))); // NOI18N
+        MenuProveedor.setText("Proveedor");
+        MenuProveedor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        MenuProveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu5ActionPerformed(evt);
+                MenuProveedorActionPerformed(evt);
             }
         });
 
@@ -269,48 +302,97 @@ public class Vist_Princi extends javax.swing.JFrame {
                 jMenuItem9ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem9);
+        MenuProveedor.add(jMenuItem9);
 
-        jMenuBar1.add(jMenu5);
+        MenuBar.add(MenuProveedor);
 
-        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reporte.png"))); // NOI18N
-        jMenu6.setText("Reporte");
-        jMenu6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar1.add(jMenu6);
+        MenuReporte.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/reporte.png"))); // NOI18N
+        MenuReporte.setText("Reporte");
+        MenuReporte.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jMenu13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ventas.png"))); // NOI18N
-        jMenu13.setText("Ventas");
-        jMenu13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenu1.setText("Ventas");
+        MenuReporte.add(jMenu1);
 
-        jMenuItem14.setText("Factura");
-        jMenu13.add(jMenuItem14);
+        jMenu15.setText("Producto");
+        MenuReporte.add(jMenu15);
+
+        jMenu18.setText("Deuda");
+
+        jMenuItem21.setText("Deudores");
+        jMenu18.add(jMenuItem21);
+
+        MenuReporte.add(jMenu18);
+
+        MenuBar.add(MenuReporte);
+
+        MenuVentas.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ventas.png"))); // NOI18N
+        MenuVentas.setText("Ventas");
+        MenuVentas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        MenuFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/facturacion.png"))); // NOI18N
+        MenuFactura.setText("Factura");
+        MenuFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuFacturaActionPerformed(evt);
+            }
+        });
+        MenuVentas.add(MenuFactura);
 
         jMenuItem15.setText("Boleta");
-        jMenu13.add(jMenuItem15);
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        MenuVentas.add(jMenuItem15);
 
-        jMenuBar1.add(jMenu13);
+        jMenuItem20.setText("A Credito");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        MenuVentas.add(jMenuItem20);
 
-        jMenu16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cliente.png"))); // NOI18N
-        jMenu16.setText("Cliente");
-        jMenu16.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar1.add(jMenu16);
+        MenuBar.add(MenuVentas);
 
-        jMenu17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/impuesto.png"))); // NOI18N
-        jMenu17.setText("Impuesto");
-        jMenu17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jMenuBar1.add(jMenu17);
+        MenuCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cliente.png"))); // NOI18N
+        MenuCliente.setText("Cliente");
+        MenuCliente.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jMenu7.setText(" Contraseña");
-        jMenu7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jMenuItem23.setText("Nuevo");
+        MenuCliente.add(jMenuItem23);
 
+        MenuBar.add(MenuCliente);
+
+        MenuImpuesto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuImpuesto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/impuesto.png"))); // NOI18N
+        MenuImpuesto.setText("Impuesto");
+        MenuImpuesto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenuItem22.setText("IGV");
+        MenuImpuesto.add(jMenuItem22);
+
+        MenuBar.add(MenuImpuesto);
+
+        MenuContrasenia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuContrasenia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/password.png"))); // NOI18N
+        MenuContrasenia.setText(" Contraseña");
+        MenuContrasenia.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cambiarContraseña.png"))); // NOI18N
         jMenuItem16.setText("Cambiar");
-        jMenu7.add(jMenuItem16);
+        MenuContrasenia.add(jMenuItem16);
 
-        jMenuBar1.add(jMenu7);
+        MenuBar.add(MenuContrasenia);
 
-        jMenu14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abastecer.png"))); // NOI18N
-        jMenu14.setText("Abastecimiento");
-        jMenu14.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        MenuAbastecimiento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuAbastecimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/abastecer.png"))); // NOI18N
+        MenuAbastecimiento.setText("Abastecimiento");
+        MenuAbastecimiento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem17.setText("Stock");
         jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
@@ -318,7 +400,7 @@ public class Vist_Princi extends javax.swing.JFrame {
                 jMenuItem17ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem17);
+        MenuAbastecimiento.add(jMenuItem17);
 
         jMenuItem18.setText("Abastecer");
         jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
@@ -326,11 +408,22 @@ public class Vist_Princi extends javax.swing.JFrame {
                 jMenuItem18ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem18);
+        MenuAbastecimiento.add(jMenuItem18);
 
-        jMenuBar1.add(jMenu14);
+        MenuBar.add(MenuAbastecimiento);
 
-        setJMenuBar(jMenuBar1);
+        MenuDeuda.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 2, new java.awt.Color(0, 0, 0)));
+        MenuDeuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/deudor.png"))); // NOI18N
+        MenuDeuda.setText("Deuda");
+        MenuDeuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        jMenuItem24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pagarDeuda.png"))); // NOI18N
+        jMenuItem24.setText("Pagar");
+        MenuDeuda.add(jMenuItem24);
+
+        MenuBar.add(MenuDeuda);
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -353,10 +446,6 @@ public class Vist_Princi extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
 
@@ -412,13 +501,13 @@ public class Vist_Princi extends javax.swing.JFrame {
         obj_Inter_Agre_Usua.btn_grabar.setVisible(false);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+    private void MenuProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuProveedorActionPerformed
         Inter_Agre_Proveedor obj_Inter_Agre_Proveedor = new Inter_Agre_Proveedor();
         Escritorio.add(obj_Inter_Agre_Proveedor);
         obj_Inter_Agre_Proveedor.show();
         obj_Inter_Agre_Proveedor.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Proveedor.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Proveedor.getHeight() / 2);
 
-    }//GEN-LAST:event_jMenu5ActionPerformed
+    }//GEN-LAST:event_MenuProveedorActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         Inter_Agre_Proveedor obj_Inter_Agre_Proveedor = new Inter_Agre_Proveedor();
@@ -435,6 +524,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         obj_Inter_Agre_Abastecimiento.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Agre_Abastecimiento.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Agre_Abastecimiento.getHeight() / 2);
         obj_Inter_Agre_Abastecimiento.labelUsuario.setText(dni_usuario.getText());
         obj_Inter_Agre_Abastecimiento.Sede_Abast.setText(CampoSede.getText());
+        
 
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
@@ -453,18 +543,69 @@ public class Vist_Princi extends javax.swing.JFrame {
         obj_Inter_Stock.show();
         obj_Inter_Stock.setLocation(0, 0);
         obj_Inter_Stock.setSize(Escritorio.getWidth() / 2, Escritorio.getHeight());
+        String sede=CampoSede.getText();
+        
+        obj_Inter_Stock.LabelSede.setText(sede);
+        System.out.println("valor "+sede);
+        obj_Inter_Stock.llenarStock();
 
     }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void MenuFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuFacturaActionPerformed
+       Inter_Venta obj_Inter_Venta = new Inter_Venta();
+        Escritorio.add(obj_Inter_Venta);
+        obj_Inter_Venta.show();
+        obj_Inter_Venta.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Venta.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Venta.getHeight() / 2);
+        obj_Inter_Venta.btn_Factura.setVisible(true);
+        obj_Inter_Venta.btn_Boleta.setVisible(false);
+        obj_Inter_Venta.btn_Proforma.setVisible(false);
+        obj_Inter_Venta.LabelFechaC.setVisible(false);
+        obj_Inter_Venta.DiaChooser.setVisible(false);
+       // obj_Inter_Venta.MesChooser.setVisible(false);
+        obj_Inter_Venta.AnioChooser.setVisible(false);
+        //obj_Inter_Venta.labelUsuario.setText(dni_usuario.getText());
+        //obj_Inter_Agre_Abastecimiento.Sede_Abast.setText(CampoSede.getText());
+        obj_Inter_Venta.LabelVentaSede.setText(CampoSede.getText());
+        //llenatar tabla inicialmente...
+        obj_Inter_Venta.LlenarTablaInicialmente();
+       
+    }//GEN-LAST:event_MenuFacturaActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        Inter_Venta obj_Inter_Venta = new Inter_Venta();
+        Escritorio.add(obj_Inter_Venta);
+        obj_Inter_Venta.show();
+        obj_Inter_Venta.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Venta.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Venta.getHeight() / 2);
+        obj_Inter_Venta.btn_Boleta.setVisible(true);
+        obj_Inter_Venta.btn_Factura.setVisible(false);
+        obj_Inter_Venta.btn_Proforma.setVisible(false);
+        obj_Inter_Venta.LabelFechaC.setVisible(false);
+        obj_Inter_Venta.DiaChooser.setVisible(false);
+        //obj_Inter_Venta.MesChooser.setVisible(false);
+        obj_Inter_Venta.AnioChooser.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+           Inter_Venta obj_Inter_Venta = new Inter_Venta();
+        Escritorio.add(obj_Inter_Venta);
+        obj_Inter_Venta.show();
+        obj_Inter_Venta.setLocation(Escritorio.getWidth() / 2 - obj_Inter_Venta.getWidth() / 2, Escritorio.getHeight() / 2 - obj_Inter_Venta.getHeight() / 2);
+        obj_Inter_Venta.btn_Boleta.setVisible(false);
+        obj_Inter_Venta.btn_Factura.setVisible(false);
+        obj_Inter_Venta.btn_Proforma.setVisible(true);
+        obj_Inter_Venta.LabelFechaC.setVisible(true);
+        obj_Inter_Venta.DiaChooser.setVisible(true);
+        //obj_Inter_Venta.MesChooser.setVisible(true);
+        obj_Inter_Venta.AnioChooser.setVisible(true);
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+       
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -481,10 +622,8 @@ public class Vist_Princi extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Vist_Princi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+        
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Vist_Princi().setVisible(true);
@@ -495,42 +634,50 @@ public class Vist_Princi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel CampoSede;
     public javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JMenu MenuAbastecimiento;
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JMenu MenuCliente;
+    private javax.swing.JMenu MenuContrasenia;
+    private javax.swing.JMenu MenuDeuda;
+    private javax.swing.JMenuItem MenuFactura;
+    private javax.swing.JMenu MenuImpuesto;
+    private javax.swing.JMenu MenuProducto;
+    private javax.swing.JMenu MenuProveedor;
+    private javax.swing.JMenu MenuReporte;
+    private javax.swing.JMenu MenuSesion;
+    private javax.swing.JMenu MenuTienda;
+    private javax.swing.JMenu MenuUsuario;
+    private javax.swing.JMenu MenuVentas;
     public javax.swing.JLabel dni_usuario;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
-    private javax.swing.JMenu jMenu13;
-    private javax.swing.JMenu jMenu14;
-    private javax.swing.JMenu jMenu16;
-    private javax.swing.JMenu jMenu17;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu15;
+    private javax.swing.JMenu jMenu18;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem22;
+    private javax.swing.JMenuItem jMenuItem23;
+    private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;

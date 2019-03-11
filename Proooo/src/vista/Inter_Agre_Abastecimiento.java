@@ -42,7 +42,6 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaEnviar = new javax.swing.JTable();
         boton_guia = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txt_documentoProveedor = new javax.swing.JTextField();
@@ -50,8 +49,10 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         labelUsuario = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Sede_Abast = new javax.swing.JLabel();
+        btnLimpiar = new javax.swing.JButton();
 
         setClosable(true);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pagarDeuda.png"))); // NOI18N
 
         jLabel1.setText("PRODUCTO:");
 
@@ -121,8 +122,6 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton3.setText("LIMPIAR");
-
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PRODUCTOS SELECCIONADOS");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -133,6 +132,8 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         jLabel4.setText("Usuario:");
 
         jLabel5.setText("SEDE:");
+
+        btnLimpiar.setText("Limpiar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -146,21 +147,21 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(303, 303, 303)
-                                .addComponent(boton_guia))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(boton_guia)
+                                .addGap(84, 84, 84))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(txt_documentoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txt_documentoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61)
                                 .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(Sede_Abast, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton3)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Sede_Abast, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLimpiar)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +204,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_guia)
-                    .addComponent(jButton3))
+                    .addComponent(btnLimpiar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -256,14 +257,11 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
          obj_ComprobantePedido.tablaProductos.setModel(modeloGuia);
          
          //llenar tabla productos.....
-         //poner logo en la guia::::::::::::::::::::::::
-         //retornar id sede
-            Consu_tien obj_consu_tien=new Consu_tien();
-            String codigoSede=obj_consu_tien.RetornarCodigoSede(Sede_Abast.getText());
-            //fin retornar id sede
-          //retornar ruc...
-            String rucTienda=obj_consu_tien.RetornarRucTienda(codigoSede);
-            //fin...
+        
+         //insertar datos empresa
+            String rucTienda=obj_func_Abast.RetornarRucTienda(Sede_Abast.getText());
+            obj_ComprobantePedido.LabelRucTienda.setText(rucTienda);
+            obj_func_Abast.InsertarDatosEmpresa(obj_ComprobantePedido.labelTelefono,obj_ComprobantePedido.labelCorreo,Sede_Abast.getText());
           //pintar...
             obj_func_Abast.PintarLogoGuia(obj_ComprobantePedido.Label_logo_guia,rucTienda);
          //poner logo en la guia::::::::::::::::::::::
@@ -280,9 +278,9 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel Sede_Abast;
-    private javax.swing.JButton boton_guia;
+    public javax.swing.JButton boton_guia;
+    public javax.swing.JButton btnLimpiar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
