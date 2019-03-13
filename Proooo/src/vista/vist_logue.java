@@ -27,9 +27,7 @@ public class vist_logue extends javax.swing.JFrame {
         obj_func_Abast.LlenarComboSede(JcomboSede);
         obj_log.llenarCargo(comboCargo);
         Contador_logueo=4;
-        //ImageIcon imge=new ImageIcon(getClass().getClassLoader().getResource("Producto.png"));
-        //jButton2.setIcon(imge);
-        //System.out.println("url: "+getClass().getClassLoader().getResource("Producto.png"));  
+        
       
         
     }

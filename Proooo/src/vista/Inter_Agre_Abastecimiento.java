@@ -138,10 +138,6 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 423, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(411, 411, 411))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -175,8 +171,11 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(labelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(371, 371, 371)
+                        .addComponent(jButton1)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,9 +186,9 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
                     .addComponent(txt_busquedaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addGap(20, 20, 20)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,11 +233,23 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txt_busquedaProductoMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String valor=JOptionPane.showInputDialog("INGRESE LA CATIDAD DE PRODUCTO!");
-        obj_func_Abast.LlenarTablaEnviar(tabla_ProductosBuscar, modelo1,Integer.parseInt(valor));
+       String valor=JOptionPane.showInputDialog(this,"INGRESE LA CATIDAD DE PRODUCTO!").toString();
+        int valor1=0;
+        try {
+             valor1=Integer.parseInt(valor);
+             System.out.println("valor: 00"+valor);
+        obj_func_Abast.LlenarTablaEnviar(tabla_ProductosBuscar, modelo1,valor1);
        tablaEnviar.setModel(modelo1);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this,"Ingrese Solo Numeros!!");
+        }
+      
+            
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
     private void boton_guiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_guiaActionPerformed
         String Ruc_Proveedor=txt_documentoProveedor.getText();
         
