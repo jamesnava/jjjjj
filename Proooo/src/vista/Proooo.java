@@ -11,8 +11,10 @@ public class Proooo {
         
       // Comprobante obj=new Comprobante();
                  //  System.out.println("codigo: "+obj.UltimoNumero("F001 - 000901"));
-        String seleccion = JOptionPane.showInputDialog( null,"Input dialog",JOptionPane.QUESTION_MESSAGE); 
-        
+       int valor=JOptionPane.showConfirmDialog(null,"aceptas?");
+        System.out.println("valor: "+valor);
+
+               
     }
     
 }

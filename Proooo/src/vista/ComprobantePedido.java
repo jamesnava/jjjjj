@@ -344,7 +344,8 @@ public class ComprobantePedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //if(JOptionPane.showConfirmDialog(this,"Desea Grabar?")==0){
+int valortt=JOptionPane.showConfirmDialog(this,"Desea Grabar?");
+if(valortt==0){
             
         PrinterJob obj_PrinterJob=PrinterJob.getPrinterJob();
         obj_PrinterJob.setPrintable(new ImprimirA4(panelimprimir));
@@ -366,7 +367,7 @@ public class ComprobantePedido extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
-        
+}
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
