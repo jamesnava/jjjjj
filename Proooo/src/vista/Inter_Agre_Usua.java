@@ -283,7 +283,7 @@ public class Inter_Agre_Usua extends javax.swing.JInternalFrame {
         String telefono=txt_telefono_usuario.getText();
         String correo=txt_correo_usuario.getText();
         String usuario=txt_usua_usuario.getText();
-        String contra=pass_contra_usuario.getText();
+        String contra=new String(pass_contra_usuario.getPassword());
         String sede=combo_sede.getSelectedItem().toString();
         String estado=txt_estado_usuario.getText();
         String cargo=combo_cargo.getSelectedItem().toString();
@@ -319,8 +319,8 @@ public class Inter_Agre_Usua extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // validar contraseña
-        String contra1=pass_contra1_usuario.getText();
-        String contra2=pass_contra_usuario.getText();
+        String contra1=new String(pass_contra1_usuario.getPassword());
+        String contra2=new String(pass_contra_usuario.getPassword());
         if(contra1.equals(contra2)){
             btn_grabar.setVisible(true);
         }

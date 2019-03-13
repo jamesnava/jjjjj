@@ -364,8 +364,8 @@ public class vist_Regis_Due extends javax.swing.JFrame {
         String apellidoM=txt_apellidoM.getText();
         String correo=txt_correo.getText();
         String usuario=txt_usuario.getText();
-        String contra=pass_contra.getText();
-        String contra1=pass_contra1.getText();
+        String contra=new String(pass_contra.getPassword());
+        String contra1=new String(pass_contra1.getPassword());
         String telefono=txt_telefono.getText();
         // recuperamos los valores de la seccion de la tienda...
         String ruc=txt_ruc.getText();
@@ -423,8 +423,8 @@ public class vist_Regis_Due extends javax.swing.JFrame {
 
     private void pass_contra1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pass_contra1KeyReleased
        
-        String primeraContra=pass_contra.getText();
-       String SegundaContra=pass_contra1.getText();
+       String primeraContra=new String(pass_contra.getPassword());
+       String SegundaContra=new String(pass_contra1.getPassword());
        //message_contra.setText(SegundaContra);
        if(primeraContra.equals(SegundaContra)){
            message_contra.setText("Correcto");
