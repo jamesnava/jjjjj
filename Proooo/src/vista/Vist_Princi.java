@@ -30,7 +30,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuVentas.setBorder(BorderFactory.createCompoundBorder(MenuVentas.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         MenuCliente.setBorder(BorderFactory.createCompoundBorder(MenuCliente.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         MenuImpuesto.setBorder(BorderFactory.createCompoundBorder(MenuImpuesto.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
-        MenuContrasenia.setBorder(BorderFactory.createCompoundBorder(MenuContrasenia.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        //MenuContrasenia.setBorder(BorderFactory.createCompoundBorder(MenuContrasenia.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         MenuAbastecimiento.setBorder(BorderFactory.createCompoundBorder(MenuAbastecimiento.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         ////MenuBar.setBackground(background);
         UIManager.put("MenuBarUI.background",Color.GREEN );
@@ -62,6 +62,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuUsuario = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         MenuProducto = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
@@ -85,8 +86,6 @@ public class Vist_Princi extends javax.swing.JFrame {
         jMenuItem23 = new javax.swing.JMenuItem();
         MenuImpuesto = new javax.swing.JMenu();
         jMenuItem22 = new javax.swing.JMenuItem();
-        MenuContrasenia = new javax.swing.JMenu();
-        jMenuItem16 = new javax.swing.JMenuItem();
         MenuAbastecimiento = new javax.swing.JMenu();
         jMenuItem17 = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
@@ -174,6 +173,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuTienda.setText("Tienda");
         MenuTienda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenu8.setIcon(new ImageIcon(getClass().getClassLoader().getResource("tiendaN.png")));
         jMenu8.setText("Tienda");
 
         jMenuItem4.setText("Actualizar Datos");
@@ -181,6 +181,7 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         MenuTienda.add(jMenu8);
 
+        jMenu12.setIcon(new ImageIcon(getClass().getClassLoader().getResource("sedeN.png")));
         jMenu12.setText("Sede");
         jMenu12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,7 +218,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         jMenuItem5.setBackground(new java.awt.Color(0, 0, 255));
-        jMenuItem5.setForeground(new java.awt.Color(0, 0, 0));
+        jMenuItem5.setIcon(new ImageIcon(getClass().getClassLoader().getResource("agreUsuario.png")));
         jMenuItem5.setText("Crear Usuario");
         jMenuItem5.setMargin(new java.awt.Insets(2, 2, 5, 2));
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -235,12 +236,18 @@ public class Vist_Princi extends javax.swing.JFrame {
         });
         MenuUsuario.add(jMenuItem7);
 
+        jMenuItem16.setIcon(new ImageIcon(getClass().getClassLoader().getResource("CambiarContraseña.png")));
+        jMenuItem16.setText("Cambiar Contraseña");
+        MenuUsuario.add(jMenuItem16);
+
         MenuBar.add(MenuUsuario);
 
         MenuProducto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuProducto.setIcon(new ImageIcon(getClass().getClassLoader().getResource("Producto.png")));
         MenuProducto.setText("Productos");
         MenuProducto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jMenu10.setIcon(new ImageIcon(getClass().getClassLoader().getResource("productoN.png")));
         jMenu10.setText("Producto");
 
         jMenuItem8.setText("Insertar");
@@ -288,6 +295,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuBar.add(MenuProducto);
 
         MenuProveedor.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuProveedor.setIcon(new ImageIcon(getClass().getClassLoader().getResource("ProveedorP.png")));
         MenuProveedor.setText("Proveedor");
         MenuProveedor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         MenuProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -296,6 +304,7 @@ public class Vist_Princi extends javax.swing.JFrame {
             }
         });
 
+        jMenuItem9.setIcon(new ImageIcon(getClass().getClassLoader().getResource("agregarProveedor.png")));
         jMenuItem9.setText("Nuevo");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -307,6 +316,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuBar.add(MenuProveedor);
 
         MenuReporte.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuReporte.setIcon(new ImageIcon(getClass().getClassLoader().getResource("reporte.png")));
         MenuReporte.setText("Reporte");
         MenuReporte.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -326,9 +336,11 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuBar.add(MenuReporte);
 
         MenuVentas.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuVentas.setIcon(new ImageIcon(getClass().getClassLoader().getResource("ventas.png")));
         MenuVentas.setText("Ventas");
         MenuVentas.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        MenuFactura.setIcon(new ImageIcon(getClass().getClassLoader().getResource("facturacion.png")));
         MenuFactura.setText("Factura");
         MenuFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,6 +368,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuBar.add(MenuVentas);
 
         MenuCliente.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuCliente.setIcon(new ImageIcon(getClass().getClassLoader().getResource("cliente.png")));
         MenuCliente.setText("Cliente");
         MenuCliente.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -365,6 +378,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuBar.add(MenuCliente);
 
         MenuImpuesto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuImpuesto.setIcon(new ImageIcon(getClass().getClassLoader().getResource("impuesto.png")));
         MenuImpuesto.setText("Impuesto");
         MenuImpuesto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -373,16 +387,8 @@ public class Vist_Princi extends javax.swing.JFrame {
 
         MenuBar.add(MenuImpuesto);
 
-        MenuContrasenia.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
-        MenuContrasenia.setText(" Contraseña");
-        MenuContrasenia.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-
-        jMenuItem16.setText("Cambiar");
-        MenuContrasenia.add(jMenuItem16);
-
-        MenuBar.add(MenuContrasenia);
-
         MenuAbastecimiento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 1, new java.awt.Color(0, 0, 0)));
+        MenuAbastecimiento.setIcon(new ImageIcon(getClass().getClassLoader().getResource("abastecer.png")));
         MenuAbastecimiento.setText("Abastecimiento");
         MenuAbastecimiento.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -405,6 +411,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuBar.add(MenuAbastecimiento);
 
         MenuDeuda.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 2, new java.awt.Color(0, 0, 0)));
+        MenuDeuda.setIcon(new ImageIcon(getClass().getClassLoader().getResource("deudor.png")));
         MenuDeuda.setText("Deuda");
         MenuDeuda.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -631,7 +638,6 @@ public class Vist_Princi extends javax.swing.JFrame {
     private javax.swing.JMenu MenuAbastecimiento;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuCliente;
-    private javax.swing.JMenu MenuContrasenia;
     private javax.swing.JMenu MenuDeuda;
     private javax.swing.JMenuItem MenuFactura;
     private javax.swing.JMenu MenuImpuesto;

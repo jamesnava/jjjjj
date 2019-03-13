@@ -278,6 +278,7 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
          
                             dispose();
                             obj_ComprobantePedido.setVisible(true);
+                            obj_ComprobantePedido.setAlwaysOnTop(true);
         }
         else{
             JOptionPane.showMessageDialog(this,"Proveedor no Registrada, Registre Primero!");

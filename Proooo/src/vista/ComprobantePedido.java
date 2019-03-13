@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import funciones.func_Abast;
 import consultas.Consu_tien;
+import javax.swing.ImageIcon;
 
 public class ComprobantePedido extends javax.swing.JFrame {
     Calendar fecha;
@@ -91,7 +92,6 @@ public class ComprobantePedido extends javax.swing.JFrame {
 
         labelFech_Prove.setText("jLabel8");
 
-        tablaProductos.setBackground(new java.awt.Color(255, 255, 255));
         tablaProductos.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -140,10 +140,10 @@ public class ComprobantePedido extends javax.swing.JFrame {
 
         jLabel8.setText("jLabel8");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/contacto.png"))); // NOI18N
+        jLabel11.setIcon(new ImageIcon(getClass().getClassLoader().getResource("contacto.png")));
         jLabel11.setText("Telf.:");
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/email.png"))); // NOI18N
+        jLabel12.setIcon(new ImageIcon(getClass().getClassLoader().getResource("email.png")));
         jLabel12.setText("Email.:");
 
         labelTelefono.setText("jLabel13");
