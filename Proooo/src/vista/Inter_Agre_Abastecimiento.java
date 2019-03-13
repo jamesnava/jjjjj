@@ -52,7 +52,6 @@ public class Inter_Agre_Abastecimiento extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
 
         setClosable(true);
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pagarDeuda.png"))); // NOI18N
 
         jLabel1.setText("PRODUCTO:");
 

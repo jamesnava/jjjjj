@@ -5,7 +5,10 @@ import funciones.func_Abast;
 import funciones.func_Logue;
 import funciones.func_Duen_Regis;
 import getters_setters.usuario_Getters_setters;
+import java.awt.Image;
 import java.sql.ResultSet;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -24,8 +27,13 @@ public class vist_logue extends javax.swing.JFrame {
         obj_func_Abast.LlenarComboSede(JcomboSede);
         obj_log.llenarCargo(comboCargo);
         Contador_logueo=4;
+        //ImageIcon imge=new ImageIcon(getClass().getClassLoader().getResource("Producto.png"));
+        //jButton2.setIcon(imge);
+        //System.out.println("url: "+getClass().getClassLoader().getResource("Producto.png"));  
+      
         
     }
+   
     
 
     @SuppressWarnings("unchecked")
@@ -89,7 +97,8 @@ public class vist_logue extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrar.png"))); // NOI18N
+        jButton2.setIcon(new ImageIcon(getClass().getClassLoader().getResource("Producto.png")));
+        jButton2.setText("Cerrar");
         jButton2.setBorder(null);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -140,9 +149,6 @@ public class vist_logue extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_contador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +171,10 @@ public class vist_logue extends javax.swing.JFrame {
                                     .addComponent(txt_usua)
                                     .addComponent(pass_cont)
                                     .addComponent(checkLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 121, Short.MAX_VALUE)))
+                        .addGap(0, 121, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -182,7 +191,7 @@ public class vist_logue extends javax.swing.JFrame {
                     .addComponent(pass_cont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(checkLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -191,7 +200,7 @@ public class vist_logue extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(JcomboSede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(47, 47, 47)
                 .addComponent(label_contador, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -209,7 +218,7 @@ public class vist_logue extends javax.swing.JFrame {
         //recuperando campos
         
         String Usuario=txt_usua.getText();
-        String cont=pass_cont.getText();
+        String cont=new String(pass_cont.getPassword());
         Vist_Princi vista_Principal=new Vist_Princi();
         if(!checkLogin.isSelected()){
         if(obj_func_Duen_Regis.RegistroNoRegistro().equals("REGISTRO")){
