@@ -42,9 +42,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Venta");
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logoVender.png"))); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buscar.png"))); // NOI18N
         jLabel1.setText("Producto");
 
         textBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +113,11 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         btn_Boleta.setText("Boleta");
 
         btn_Proforma.setText("Proforma");
+        btn_Proforma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProformaActionPerformed(evt);
+            }
+        });
 
         btn_Limpiar.setText("Limpiar");
 
@@ -269,6 +272,12 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
            obj_func_ventas.PasarDatosEntreTablas(TablaProductoBuscar, tablaAgregado, valor);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_ProformaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProformaActionPerformed
+        
+
+        
+    }//GEN-LAST:event_btn_ProformaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
