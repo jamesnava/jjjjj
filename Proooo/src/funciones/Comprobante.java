@@ -11,6 +11,7 @@ import java.awt.Image;
 import java.sql.Blob;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 
 public class Comprobante {
     private double importe;
@@ -142,9 +143,10 @@ public class Comprobante {
             System.out.println(e);
         }
          Image img=obj_image.RetornarImagen(blob);
-         ImageIcon icon=new ImageIcon(img.getScaledInstance(250,100,Image.SCALE_SMOOTH));
+         ImageIcon icon=new ImageIcon(img.getScaledInstance(250,140,Image.SCALE_SMOOTH));
          label.setIcon(icon);
     }
+    
     
     
 }

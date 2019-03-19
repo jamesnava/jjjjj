@@ -34,9 +34,7 @@ public class Func_Factura extends Comprobante{
         SetImporte(tabla);
         return getImporte();
     }
-    public void insertarLogo(JLabel labelLogo,String ruc){
-        InsertarLogo(labelLogo, ruc);
-    }
+   
     public void InsertarFactura(JTable tabla){
         DefaultTableModel modelo=(DefaultTableModel)tabla.getModel();
         String serieFactura=RetornarSerieFactura();
@@ -68,6 +66,19 @@ public class Func_Factura extends Comprobante{
         
         valor=valor+1;
         return valor;
+    }
+    public void pasaDatosEntreTabla(JTable tablaOrigen,JTable tablaDestino){
+        DefaultTableModel modeloOrigen=(DefaultTableModel)tablaOrigen.getModel();
+        Object valores[]=new Object[6];
+        int row=modeloOrigen.getRowCount();
+        for(int i=0;i<row;i++){
+            valores[0]=i+1;
+            valores[1]=
+            valores[2]=modeloOrigen.getValueAt(i,1);
+            valores[3]=modeloOrigen.getValueAt(i,2);
+            valores[4]="";
+            valores[5]="";
+        }
     }
     
     
