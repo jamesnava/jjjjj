@@ -255,7 +255,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_textBuscarKeyReleased
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String cantidad=JOptionPane.showInputDialog("Ingrese la Cantidad");
+       String cantidad=JOptionPane.showInputDialog(this,"Ingrese la Cantidad");
        func_Ventas obj_func_ventas=new func_Ventas();
        int valor=0;
        try{

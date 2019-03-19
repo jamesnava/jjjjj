@@ -15,12 +15,13 @@ public class Proooo {
        //int valor=JOptionPane.showConfirmDialog(null,"aceptas?");
         //System.out.println("valor: "+valor);
         //Consu_Comprobante obj=new Consu_Comprobante();
-        //float optener=obj.optenerIgv("ACTIVO");
-       // System.out.println(optener);
+        //float optener=obj.RetornarCantidadProducto("RR-TT","TT-TTT");
+      // System.out.println(optener);
         Consu_Comprobante obj=new Consu_Comprobante();
-        obj.insertarboleta("01", "2019-03-18", 30, 20, "fota", "47259761","47584657","FFF",3);
+        //obj.insertarDetalleBoleta(3,50,"ffdfdf", 20,"01", "RR-TT", 23);
+        obj.retornoMaxIdFactura();
         
-        System.out.println(obj);
+        System.out.println(obj.retornoMaxIdFactura());
         
     
 

@@ -507,6 +507,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="Escritorio">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1300, 868]"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -529,7 +534,7 @@
                       </Group>
                       <Component id="labelImagen" min="-2" pref="151" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="845" max="32767" attributes="0"/>
+                  <EmptySpace pref="1086" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

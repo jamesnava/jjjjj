@@ -16,6 +16,7 @@ public class Vist_Princi extends javax.swing.JFrame {
     public Vist_Princi() {
         initComponents();
         
+        
         this.setExtendedState(MAXIMIZED_BOTH);
         
         //MenuTienda.setBorder(BorderFactory.createLineBorder(Color.RED,10));
@@ -97,6 +98,8 @@ public class Vist_Princi extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
 
+        Escritorio.setPreferredSize(new java.awt.Dimension(1300, 868));
+
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("USUARIO:");
 
@@ -126,7 +129,7 @@ public class Vist_Princi extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(CampoSede, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(labelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(845, Short.MAX_VALUE))
+                .addContainerGap(1086, Short.MAX_VALUE))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -433,7 +436,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(Escritorio)
+                .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
