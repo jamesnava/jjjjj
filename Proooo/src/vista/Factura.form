@@ -82,7 +82,7 @@
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" pref="245" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" pref="289" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -313,7 +313,7 @@
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="FACTURACION ELECTRONICA"/>
+                <Property name="text" type="java.lang.String" value="FACTURA ELECTRONICA"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel13">
