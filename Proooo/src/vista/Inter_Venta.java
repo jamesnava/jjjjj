@@ -25,12 +25,11 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaAgregado = new javax.swing.JTable();
-        jTextField2 = new javax.swing.JTextField();
+        txtDniCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         LabelFechaC = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        btn_Factura = new javax.swing.JButton();
         btn_Boleta = new javax.swing.JButton();
         btn_Proforma = new javax.swing.JButton();
         btn_Limpiar = new javax.swing.JButton();
@@ -39,6 +38,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         AnioChooser = new com.toedter.calendar.JYearChooser();
         jLabel3 = new javax.swing.JLabel();
         LabelVentaSede = new javax.swing.JLabel();
+        btn_Factura = new javax.swing.JButton();
 
         setClosable(true);
         setTitle("Venta");
@@ -89,11 +89,11 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "CODIGO", "PRODUCTO", "PRECIO", "IMPORTE"
+                "CODIGO", "PRODUCTO", "PRECIO", "CANTIDAD", "IMPORTE"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -108,9 +108,12 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Descuento %");
 
-        btn_Factura.setText("Factura");
-
         btn_Boleta.setText("Boleta");
+        btn_Boleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BoletaActionPerformed(evt);
+            }
+        });
 
         btn_Proforma.setText("Proforma");
         btn_Proforma.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +125,13 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         btn_Limpiar.setText("Limpiar");
 
         jLabel3.setText("Sede:");
+
+        btn_Factura.setText("Factura1");
+        btn_Factura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_FacturaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,7 +168,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                                         .addComponent(MesChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(AnioChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(76, 76, 76)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -168,7 +178,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                                     .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                                     .addComponent(LabelVentaSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(355, 355, 355)
+                                .addGap(351, 351, 351)
                                 .addComponent(btn_Factura)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_Boleta)
@@ -195,7 +205,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -208,7 +218,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                                     .addComponent(DiaChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 4, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel3)
@@ -216,10 +226,10 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                                     .addComponent(AnioChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(41, 41, 41)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_Factura)
                             .addComponent(btn_Boleta)
                             .addComponent(btn_Proforma)
-                            .addComponent(btn_Limpiar))
+                            .addComponent(btn_Limpiar)
+                            .addComponent(btn_Factura))
                         .addGap(36, 36, 36))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(MesChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,6 +289,19 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_btn_ProformaActionPerformed
 
+    private void btn_BoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BoletaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_BoletaActionPerformed
+
+    private void btn_FacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FacturaActionPerformed
+        // TODO add your handling code here:
+        Factura obj=new Factura();
+                obj.setVisible(true);
+                obj.setAlwaysOnTop(true);
+        
+    }//GEN-LAST:event_btn_FacturaActionPerformed
+    
+            
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.toedter.calendar.JYearChooser AnioChooser;
@@ -298,9 +321,9 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTable tablaAgregado;
     private javax.swing.JTextField textBuscar;
+    private javax.swing.JTextField txtDniCliente;
     // End of variables declaration//GEN-END:variables
 }

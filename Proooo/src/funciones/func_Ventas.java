@@ -93,12 +93,13 @@ public void llenarTablaProductoVentaInicial(JTable tabla,String sede){
 public void PasarDatosEntreTablas(JTable tabla1,JTable tabla2, int cantidad){
    int row=tabla1.getSelectedRow();
     DefaultTableModel modelo2=(DefaultTableModel)tabla2.getModel();
-    Object [] valores=new Object[4];
+    Object [] valores=new Object[5];
     float precio=Float.parseFloat(tabla1.getValueAt(row,2).toString());
     valores[0]=tabla1.getValueAt(row,0);
     valores[1]=tabla1.getValueAt(row,1);
     valores[2]=precio;
-    valores[3]=precio*cantidad;
+    valores[3]=cantidad;
+    valores[4]=precio*cantidad;
     modelo2.addRow(valores);
     tabla2.setModel(modelo2);
 }

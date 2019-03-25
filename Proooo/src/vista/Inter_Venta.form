@@ -74,7 +74,7 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="351" max="-2" attributes="0"/>
                               <Component id="btn_Factura" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btn_Boleta" min="-2" max="-2" attributes="0"/>
@@ -124,7 +124,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -136,10 +136,10 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn_Factura" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_Boleta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_Proforma" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_Limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_Factura" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
@@ -207,10 +207,11 @@
         <Component class="javax.swing.JTable" name="tablaAgregado">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
+              <Table columnCount="5" rowCount="0">
                 <Column editable="false" title="CODIGO" type="java.lang.Object"/>
                 <Column editable="false" title="PRODUCTO" type="java.lang.Object"/>
                 <Column editable="false" title="PRECIO" type="java.lang.Object"/>
+                <Column editable="false" title="CANTIDAD" type="java.lang.Object"/>
                 <Column editable="false" title="IMPORTE" type="java.lang.Object"/>
               </Table>
             </Property>
@@ -240,21 +241,13 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
     </Component>
-    <Component class="javax.swing.JButton" name="btn_Factura">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Factura"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_FacturaActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JButton" name="btn_Boleta">
       <Properties>
         <Property name="text" type="java.lang.String" value="Boleta"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_BoletaActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -296,6 +289,17 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelVentaSede">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_Factura">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Factura1"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_FacturaActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
