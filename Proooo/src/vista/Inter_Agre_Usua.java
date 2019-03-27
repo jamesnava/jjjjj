@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import funciones.func_Usua;
 import getters_setters.usuario_Getters_setters;
 import java.io.File;
-import javafx.stage.FileChooser;
+//import javafx.stage.FileChooser;
 import javax.swing.JFileChooser;
 
 

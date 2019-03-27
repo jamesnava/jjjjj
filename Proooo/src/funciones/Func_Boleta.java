@@ -16,8 +16,8 @@ private String ladoIzquierdoSerieBoleta(){
     }
 //IMPORTE
 public double importeBoleta(JTable tabla){
-        SetImporte(tabla);
-        return getImporte();
+        SetImporteTotal(tabla);
+        return getImporteTotal();
     }
 // insertar logo
 public void insertarLogo(JLabel labelLogo,String ruc){

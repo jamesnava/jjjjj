@@ -31,7 +31,7 @@ public class Factura extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaFacturaProducto = new javax.swing.JTable();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -119,7 +119,7 @@ public class Factura extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaFacturaProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -135,24 +135,24 @@ public class Factura extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setGridColor(new java.awt.Color(0, 0, 0));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(2);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(5);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setPreferredWidth(10);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setPreferredWidth(2);
-            jTable1.getColumnModel().getColumn(6).setResizable(false);
-            jTable1.getColumnModel().getColumn(6).setPreferredWidth(2);
+        TablaFacturaProducto.setGridColor(new java.awt.Color(0, 0, 0));
+        TablaFacturaProducto.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(TablaFacturaProducto);
+        if (TablaFacturaProducto.getColumnModel().getColumnCount() > 0) {
+            TablaFacturaProducto.getColumnModel().getColumn(0).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(0).setPreferredWidth(1);
+            TablaFacturaProducto.getColumnModel().getColumn(1).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(1).setPreferredWidth(2);
+            TablaFacturaProducto.getColumnModel().getColumn(2).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(2).setPreferredWidth(50);
+            TablaFacturaProducto.getColumnModel().getColumn(3).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(3).setPreferredWidth(5);
+            TablaFacturaProducto.getColumnModel().getColumn(4).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(4).setPreferredWidth(10);
+            TablaFacturaProducto.getColumnModel().getColumn(5).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(5).setPreferredWidth(2);
+            TablaFacturaProducto.getColumnModel().getColumn(6).setResizable(false);
+            TablaFacturaProducto.getColumnModel().getColumn(6).setPreferredWidth(2);
         }
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -333,6 +333,7 @@ public class Factura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTable TablaFacturaProducto;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -359,7 +360,6 @@ public class Factura extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     public javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }

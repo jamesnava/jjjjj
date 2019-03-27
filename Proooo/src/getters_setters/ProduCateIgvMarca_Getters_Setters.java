@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package getters_setters;
 
 import java.time.Year;
 
-/**
- *
- * @author CESAR
- */
+
 public class ProduCateIgvMarca_Getters_Setters {
     // getter y setter del Producto
     
@@ -34,7 +27,7 @@ public class ProduCateIgvMarca_Getters_Setters {
     String CodigoI;
     Double MontoI;
     String DescripcionI;
-    Year AnioI;
+   Year AnioI;
     
     //getter y setter de Marca
     
