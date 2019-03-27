@@ -17,12 +17,13 @@ public class Proooo {
         //Consu_Comprobante obj=new Consu_Comprobante();
         //float optener=obj.RetornarCantidadProducto("RR-TT","TT-TTT");
       // System.out.println(optener);
-        Consu_Comprobante obj=new Consu_Comprobante();
+        //Consu_Comprobante obj=new Consu_Comprobante();
         //obj.insertarDetalleBoleta(3,50,"ffdfdf", 20,"01", "RR-TT", 23);
-        obj.retornoSerieConMaxIdFactura();
+        //obj.retornoSerieConMaxIdFactura();
         
-        System.out.println(obj.retornoSerieConMaxIdFactura());
-        
+       // System.out.println(obj.retornoSerieConMaxIdFactura());
+        Func_Factura obj=new Func_Factura();
+        System.out.println("serie es: "+obj.AfectacionIgv(100));
     
 
                

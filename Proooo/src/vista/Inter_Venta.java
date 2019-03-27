@@ -3,6 +3,7 @@ package vista;
 
 import funciones.Func_Factura;
 import funciones.func_Ventas;
+import funciones.func_tien;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -161,15 +162,17 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(LabelFechaC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
                                         .addComponent(DiaChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(MesChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(AnioChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(AnioChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(76, 76, 76)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -214,7 +217,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 8, Short.MAX_VALUE)
+                                .addGap(0, 12, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
                                     .addComponent(LabelVentaSede, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -297,10 +300,41 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         
         Func_Factura obj_Func_Factura=new Func_Factura();
         Factura obj=new Factura();
+        func_tien obj_func_tien=new func_tien();
+        String sede=LabelVentaSede.getText();
+        //obteniendo ruc
+        String rucTiend=obj_func_tien.retornarRucTienda(sede);
+        //obteniendo ruc
+        String dni=txtDniCliente.getText();
+        
+        boolean comprobarDatos=obj_Func_Factura.InsertarDatosAFactura(dni,obj.labelRazon, obj.labelRuc,obj.labelDireccion);
+        
+        if(comprobarDatos){
+        obj_Func_Factura.InsertarLogo(obj.logo,rucTiend);
+        //insetar ruc
+        obj.LabelRucTienda.setText(rucTiend);
+        //insertar serie factura...
+        obj.LabelSerieFactura.setText(obj_Func_Factura.RetornarSerieFactura());
+        // importe total
+        double importeTotal=obj_Func_Factura.importeFactura(tablaAgregado);
+        // afectacion igv
+        double afectacionIgv=obj_Func_Factura.AfectacionIgv(importeTotal);
+        // gravada...
+        double gravada=importeTotal-afectacionIgv;
+        //descuento..
         double descuento=Double.parseDouble(txtDescuento.getText());
+        //::::::::::::::::::::::::::insertar a factura diseño
+        obj.labelGravada.setText(String.valueOf(gravada));
+        obj.AfectacionIgv.setText(String.valueOf(afectacionIgv));
+        obj.labelDescuento.setText(String.valueOf(descuento));
+        obj.labelTotal.setText(String.valueOf(importeTotal));
+        
+        //::::::::::::::::::fin:::::::::::::::::::
+        
         obj_Func_Factura.pasaDatosEntreTabla(tablaAgregado,obj.TablaFacturaProducto);
         obj.setVisible(true);
         obj.setAlwaysOnTop(true);
+        }
         
     }//GEN-LAST:event_btn_FacturaActionPerformed
     

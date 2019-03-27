@@ -92,13 +92,12 @@ public int RetornarCantidadProducto(String codigo,String sede){
        
     }
    public ResultSet retornoSerieConMaxIdFactura(){
-            String sql="CALL RetornarMaximoIdFactura()";
+            String sql="CALL RetornarDatosFactura()";
             ResultSet datos=null;
             try {
                 Statement st=optener.createStatement();
                datos=st.executeQuery(sql);
-                
-                    
+                                    
                 
                 
             } catch (SQLException e) {
@@ -120,5 +119,17 @@ public int RetornarCantidadProducto(String codigo,String sede){
             }
             return maximo;
         }
+     public ResultSet consultaclienteDni(String dnicliente){
+    String sql="CALL ConsultaClientePorDni('"+dnicliente+"')";
+    ResultSet rs=null;
+         try {
+                Statement st=optener.createStatement();
+                rs=st.executeQuery(sql);
+                
+                
+            } catch (Exception e) {
+            }
+            return rs;
+    }
    
 }

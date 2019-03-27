@@ -1,6 +1,7 @@
 
 package funciones;
 
+import consultas.Consu_Comprobante;
 import consultas.Consu_tien;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,10 +51,11 @@ public class Comprobante {
         System.err.println(condicion);
         switch(condicion){
             case "FACTURA":
-                ResultSet rs1=null;
+                Consu_Comprobante obj_Consu_Comprobante=new Consu_Comprobante();
+                ResultSet rs1=obj_Consu_Comprobante.retornoSerieConMaxIdFactura();
                     try {
                         while(rs1.next()){
-                            String valor1=rs1.getString("seri_fact");
+                            String valor1=rs1.getString("serie");
                             String Valor=RetornaSerieDerecha(UltimoNumero(valor1)+1);
                             Serie=Valor;
                             

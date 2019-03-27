@@ -28,6 +28,7 @@ public class vist_logue extends javax.swing.JFrame {
         obj_log.llenarCargo(comboCargo);
         Contador_logueo=4;
         
+        
       
         
     }
