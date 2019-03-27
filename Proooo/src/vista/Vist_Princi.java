@@ -33,8 +33,7 @@ public class Vist_Princi extends javax.swing.JFrame {
         MenuImpuesto.setBorder(BorderFactory.createCompoundBorder(MenuImpuesto.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         //MenuContrasenia.setBorder(BorderFactory.createCompoundBorder(MenuContrasenia.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         MenuAbastecimiento.setBorder(BorderFactory.createCompoundBorder(MenuAbastecimiento.getBorder(),BorderFactory.createEmptyBorder(0, 10, 0, 0)));
-        ////MenuBar.setBackground(background);
-        UIManager.put("MenuBarUI.background",Color.GREEN );
+        
         
     }
     

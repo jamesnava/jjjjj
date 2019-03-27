@@ -21,11 +21,11 @@ public class Comprobante {
         CantidadComprobante="";
     }
     
-    public void SetImporte(JTable tabla){
+    public void SetImporteTotal(JTable tabla){
         String valor;
         int row=tabla.getRowCount();
         for(int i=0;i<=row;i++){
-            valor=tabla.getValueAt(i,0).toString();
+            valor=tabla.getValueAt(i,4).toString();
             try {
                 importe=importe+Double.parseDouble(valor);
             } catch (Exception e) {
@@ -35,8 +35,15 @@ public class Comprobante {
         
      
     }
-    public double getImporte(){
+    public double getImporteTotal(){
         return importe;
+    }
+    public double getDescuento(double descuento){
+        double valor=descuento;
+        if(valor<0){
+            valor=0;
+        }
+        return valor;
     }
     public String setSerieComprobante(String condicion){
         String Serie="";

@@ -19,9 +19,9 @@ public class Proooo {
       // System.out.println(optener);
         Consu_Comprobante obj=new Consu_Comprobante();
         //obj.insertarDetalleBoleta(3,50,"ffdfdf", 20,"01", "RR-TT", 23);
-        obj.retornoMaxIdFactura();
+        obj.retornoSerieConMaxIdFactura();
         
-        System.out.println(obj.retornoMaxIdFactura());
+        System.out.println(obj.retornoSerieConMaxIdFactura());
         
     
 

@@ -31,8 +31,8 @@ public class Func_Factura extends Comprobante{
         return "F0001 - ";
     }
     public double importeFactura(JTable tabla){
-        SetImporte(tabla);
-        return getImporte();
+        SetImporteTotal(tabla);
+        return getImporteTotal();
     }
    
     public void InsertarFactura(JTable tabla){
@@ -68,25 +68,26 @@ public class Func_Factura extends Comprobante{
         return valor;
     }
     public void pasaDatosEntreTabla(JTable tablaOrigen,JTable tablaDestino){
-        DefaultTableModel modeloOrigen=(DefaultTableModel)tablaOrigen.getModel();
-        Object valores[]=new Object[6];
-        int row=modeloOrigen.getRowCount();
+       
+        DefaultTableModel modeloDestino=(DefaultTableModel)tablaDestino.getModel();
+        int row=tablaOrigen.getRowCount();
+        Object valores[]=new Object[7];
         for(int i=0;i<row;i++){
             valores[0]=i+1;
-            valores[1]=
-            valores[2]=modeloOrigen.getValueAt(i,1);
-            valores[3]=modeloOrigen.getValueAt(i,2);
-            valores[4]="";
-            valores[5]="";
+            valores[1]=tablaOrigen.getValueAt(i, 3);
+            valores[2]=tablaOrigen.getValueAt(i,1);
+            valores[3]=tablaOrigen.getValueAt(i,2);
+            valores[4]="hola";
+            valores[5]="hola";
+            
+            valores[6]=tablaOrigen.getValueAt(i,4);
+           // System.out.println("valores"+getImporte());     
+            modeloDestino.addRow(valores);
         }
+        tablaDestino.setModel(modeloDestino);
+        System.out.println("filas: "+row);
     }
-    
-    
-
-  
-    
-
    
-    
+     
    
 }

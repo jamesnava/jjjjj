@@ -5,6 +5,7 @@ package consultas;
 import funciones.conectar;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
@@ -90,20 +91,19 @@ public int RetornarCantidadProducto(String codigo,String sede){
         }
        
     }
-   public int retornoMaxIdFactura(){
+   public ResultSet retornoSerieConMaxIdFactura(){
             String sql="CALL RetornarMaximoIdFactura()";
-            int idmaximo=0;
+            ResultSet datos=null;
             try {
                 Statement st=optener.createStatement();
-                ResultSet rs=st.executeQuery(sql);
-                while (rs.next()) { 
-                   idmaximo=rs.getInt("codigo");
-                    
-                }
+               datos=st.executeQuery(sql);
                 
-            } catch (Exception e) {
+                    
+                
+                
+            } catch (SQLException e) {
             }
-            return idmaximo;
+            return datos;
         }
     public int retornoMaxIdDetalleFactura(){
             String sql="CALL RetornarMaximoIdDetalleFact()";
@@ -112,7 +112,7 @@ public int RetornarCantidadProducto(String codigo,String sede){
                 Statement st=optener.createStatement();
                 ResultSet rs=st.executeQuery(sql);
                 while (rs.next()) { 
-                    maximo=rs.getInt("codigo");
+                    maximo=rs.getInt("serie");
                     
                 }
                 

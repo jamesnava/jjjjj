@@ -1,6 +1,7 @@
 
 package vista;
 
+import funciones.Func_Factura;
 import funciones.func_Ventas;
 import java.io.IOException;
 import javax.swing.JOptionPane;
@@ -29,7 +30,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         LabelFechaC = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtDescuento = new javax.swing.JTextField();
         btn_Boleta = new javax.swing.JButton();
         btn_Proforma = new javax.swing.JButton();
         btn_Limpiar = new javax.swing.JButton();
@@ -175,7 +176,7 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel3))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                    .addComponent(txtDescuento, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                                     .addComponent(LabelVentaSede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(351, 351, 351)
@@ -207,24 +208,23 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtDniCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 8, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(LabelVentaSede, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(45, 45, 45))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(LabelFechaC)
-                                    .addComponent(DiaChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 4, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel3)
-                                        .addComponent(LabelVentaSede, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(DiaChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(AnioChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(41, 41, 41)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_Boleta)
                             .addComponent(btn_Proforma)
@@ -294,10 +294,13 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btn_BoletaActionPerformed
 
     private void btn_FacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FacturaActionPerformed
-        // TODO add your handling code here:
+        
+        Func_Factura obj_Func_Factura=new Func_Factura();
         Factura obj=new Factura();
-                obj.setVisible(true);
-                obj.setAlwaysOnTop(true);
+        double descuento=Double.parseDouble(txtDescuento.getText());
+        obj_Func_Factura.pasaDatosEntreTabla(tablaAgregado,obj.TablaFacturaProducto);
+        obj.setVisible(true);
+        obj.setAlwaysOnTop(true);
         
     }//GEN-LAST:event_btn_FacturaActionPerformed
     
@@ -321,9 +324,9 @@ public class Inter_Venta extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTable tablaAgregado;
     private javax.swing.JTextField textBuscar;
+    private javax.swing.JTextField txtDescuento;
     private javax.swing.JTextField txtDniCliente;
     // End of variables declaration//GEN-END:variables
 }
