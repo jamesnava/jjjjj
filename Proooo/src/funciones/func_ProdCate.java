@@ -4,6 +4,7 @@ import consultas.Consu_ProdCate;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JComboBox;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -16,7 +17,7 @@ public class func_ProdCate {
 public func_ProdCate(){
     obj_Consu_ProdCate=new Consu_ProdCate();
 }
-public void insertarProducto(String codigo,String nombre,String descripcion,String color,String tamaño,String nomb_cate, String dni_usuario, String marca){
+public void insertarProducto(String codigo,String nombre,String descripcion,String color,String tamaño,String nomb_cate, String dni_usuario, String marca, JInternalFrame frame){
     ResultSet rsCategoria,rsMarca;
     int idMarca=0;
     String codigo_categoria="";
@@ -35,10 +36,10 @@ public void insertarProducto(String codigo,String nombre,String descripcion,Stri
     System.out.println("CODIGO CATE:"+codigo_categoria);
    String valor= obj_Consu_ProdCate.InsertarProducto(codigo, nombre, descripcion, color, tamaño, codigo_categoria, dni_usuario, idMarca);
    if(valor.equals("CORRECTO")){
-       JOptionPane.showMessageDialog(null,"SE INSERTÓ CORRECTAMENTE");
+       JOptionPane.showMessageDialog(frame,"SE INSERTÓ CORRECTAMENTE");
    }
    else{
-       JOptionPane.showMessageDialog(null,"OCURRIÓ PROBLEMAS AL INSERTAR");
+       JOptionPane.showMessageDialog(frame,"OCURRIÓ PROBLEMAS AL INSERTAR");
    }
 }
 public void ActualizarProducto(String codigo,String nombre,String descripcion,String color,String tamaño,String nomb_cate, String dni_usuario, String marca){
@@ -221,7 +222,7 @@ public void llenarComboProductoPrecio(JComboBox combo){
         System.out.println(e);
     }
 }
-public void InsertarPrecioProducto(String fecha,float precioVenta,float precioCompra,String producto,String estado){
+public void InsertarPrecioProducto(String fecha,float precioVenta,float precioCompra,String producto,String estado,JInternalFrame frame){
     String codigoProducto="";
     ResultSet rs=obj_Consu_ProdCate.ConsultaIdProducto(producto);
     int n=obj_Consu_ProdCate.RetornarIdUltimoPrecio()+1;
@@ -236,10 +237,10 @@ public void InsertarPrecioProducto(String fecha,float precioVenta,float precioCo
     
     String valor=obj_Consu_ProdCate.InsertarPrecioProducto(n,fecha, precioVenta, precioCompra, codigoProducto, estado);
     if(valor.equals("CORRECTO")){
-        JOptionPane.showMessageDialog(null,"SE INSERTÓ CORRECTAMENTE");
+        JOptionPane.showMessageDialog(frame,"SE INSERTÓ CORRECTAMENTE");
     }
     else{
-        JOptionPane.showMessageDialog(null,"PROBLEMAS AL INSERTAR");
+        JOptionPane.showMessageDialog(frame,"PROBLEMAS AL INSERTAR");
         
     }
     

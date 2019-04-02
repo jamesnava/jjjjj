@@ -147,7 +147,7 @@ public class Inter_Agre_PrecioProducto extends javax.swing.JInternalFrame {
         try {
             preciov=Float.parseFloat(precioVenta);
         precioc=Float.parseFloat(PrecioCompra);
-        obj_func_ProdCate.InsertarPrecioProducto(fecha, preciov, precioc, producto, estado);
+        obj_func_ProdCate.InsertarPrecioProducto(fecha, preciov, precioc, producto, estado, this);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,"Ingrese Solo Numero en los campos que correspondan!");
         }

@@ -1,6 +1,7 @@
 
 package vista;
 import funciones.func_ProdCate;
+import javax.swing.JInternalFrame;
 import javax.swing.table.DefaultTableModel;
 
 public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
@@ -297,7 +298,7 @@ public class Inter_Agre_Producto extends javax.swing.JInternalFrame {
         String usuario=txt_usuario_producto.getText();
         // getters y setters
         //fin getters y setters
-       obj_func_ProdCate.insertarProducto(codigo, nombre, descripcion, color, tamaño,categoria, usuario, marca);
+       obj_func_ProdCate.insertarProducto(codigo, nombre, descripcion, color, tamaño,categoria, usuario, marca, this);
         //System.out.println("fs "+marca+categoria );
        //Actualizar tabla productos...
        DefaultTableModel modelo=(DefaultTableModel)tabla_productos.getModel();
